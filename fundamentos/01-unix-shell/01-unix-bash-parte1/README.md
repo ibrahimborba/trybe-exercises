@@ -5,8 +5,7 @@ O objetivo dos exercícios desse dia foi colocar em prática o que havia aprendi
 Os requisitos do exercício são:
 
 
-### **PARTE 1**
-
+### **PARTE 1 - CRIAÇÃO DE ARQUIVOS E DIRETÓRIOS**
 1. Utilizando o terminal, aplique o comando de criação de diretórios que você aprendeu, crie um diretório chamado `unix_tests` e navegue até ele.
 
 2. Crie um arquivo de texto com o nome `trybe.txt`.
@@ -40,8 +39,7 @@ Os requisitos do exercício são:
 16. Apague todos os arquivos que terminem em `.txt`.
 
 
-### **PARTE 2**
-
+### **PARTE 2 - MANIPULAÇÃO E BUSCA**
 1. Na pasta `unix_tests`, baixe um arquivo com os nomes de todos os países do mundo utilizando o comando `curl`.
 
 2. Mostre todo o conteúdo do arquivo `countries.txt` na tela.
