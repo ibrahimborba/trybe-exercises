@@ -12,7 +12,7 @@
     box-sizing: border-box
 }
 
-h1, h2, h3, nav, th {
+h1, h2, h3, nav, th, caption {
     font-family: 'Noto Sans', sans-serif;
 }
 
@@ -37,14 +37,15 @@ header a:hover, article a:hover{
 .header {
     height: 60px;
     width: 100%;
-    font-size: 16px;
     border-bottom: 1px solid var(--primary);
 }
 
-.header h2{
+.header h1{
     display: inline-block;
     margin-top: 10px;
     margin-left: 150px;
+    font-weight: 700;
+    font-size: 26px;
 }
 
 .header nav {
@@ -55,7 +56,6 @@ header a:hover, article a:hover{
 
 .header nav a{
     margin: 10px;
-    color: var(--Dark);
     font-weight: bold;
 }
 
@@ -68,7 +68,7 @@ article {
     margin-left: 150px;
 }
 
-article header{
+.article-header{
     width: 800px;
     font-size: 24px;
     letter-spacing: 1.6px;
@@ -79,6 +79,13 @@ table {
     width: 100%;
     text-align: left;
     margin-right: 10px;
+}
+
+table caption {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .classification {
@@ -130,7 +137,7 @@ table {
 /* Aside */
 aside {
     float: right;
-    height: 250px;
+    height: auto;
     width: 22%;
     margin-top: 50px;
     margin-right: 100px;
@@ -147,13 +154,24 @@ aside img {
     object-fit: cover;
 }
 
-aside a h3{
+aside a {
     margin-top: 25px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 aside a:hover {
     opacity: 50%;
     transition: .15s;
+}
+
+aside p {
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 /* Footer */
