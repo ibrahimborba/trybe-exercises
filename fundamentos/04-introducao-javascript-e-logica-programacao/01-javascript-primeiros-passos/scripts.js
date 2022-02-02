@@ -100,3 +100,28 @@ switch (pieceName.toLowerCase()) {
   default:
     console.log("invalid piece name");
 }
+
+// Converte a nota em porcentagem em nota alfabetica
+const gradePercentage = 105;
+
+if(gradePercentage < 0 || gradePercentage > 100){
+  console.log("invalid grade");
+}
+else if(gradePercentage >= 90){
+  console.log("grade A");
+}
+else if(gradePercentage >= 80){
+  console.log("grade B");
+}
+else if(gradePercentage >= 70){
+  console.log("grade C");
+}
+else if(gradePercentage >= 60){
+  console.log("grade D");
+}
+else if(gradePercentage >= 50){
+  console.log("grade E");
+}
+else if(gradePercentage < 50){
+  console.log("grade F");
+}
