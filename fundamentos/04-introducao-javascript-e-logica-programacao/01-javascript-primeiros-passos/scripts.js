@@ -20,7 +20,7 @@ if(x > y){
 else if(y > x){
   console.log ("y é maior que x");
 }
-else{
+else {
   console.log("x e y são iguais");
 }
 
@@ -51,7 +51,7 @@ if(checkSignal > 0){
 else if(checkSignal < 0){
   console.log("negative");
 }
-else if(checkSignal === 0){
+else {
   console.log("zero");
 }
 
@@ -102,36 +102,39 @@ switch (pieceName.toLowerCase()) {
 }
 
 // Converte a nota em porcentagem em nota alfabetica
-const gradePercentage = 105;
+const gradePercentage = 0;
+let gradeLetter = "to be defined";
 
 if(gradePercentage < 0 || gradePercentage > 100){
   console.log("invalid grade");
 }
 else if(gradePercentage >= 90){
-  console.log("grade A");
+  gradeLetter = "A";
 }
 else if(gradePercentage >= 80){
-  console.log("grade B");
+  gradeLetter = "B";
 }
 else if(gradePercentage >= 70){
-  console.log("grade C");
+  gradeLetter = "C";
 }
 else if(gradePercentage >= 60){
-  console.log("grade D");
+  gradeLetter = "D";
 }
 else if(gradePercentage >= 50){
-  console.log("grade E");
+  gradeLetter = "E";
 }
-else if(gradePercentage < 50){
-  console.log("grade F");
+else{
+  gradeLetter = "F";
 }
+
+console.log(gradeLetter);
 
 // Checa se pelo menos um número no conjunto é par
-const numberX = 1;
-const numberY = 1;
-const numberZ = 1;
+const isEvenX = 1;
+const isEvenY = 1;
+const isEvenZ = 1;
 
-if (numberX % 2 === 0 || numberY % 2 === 0 || numberZ % 2 === 0){
+if (isEvenX % 2 === 0 || isEvenY % 2 === 0 || isEvenZ % 2 === 0){
   console.log(true);
 }
 else{
@@ -139,11 +142,11 @@ else{
 }
 
 // Checa se pelo menos um número no conjunto é ímpar
-const numberA = 2;
-const numberB = 4;
-const numberC = 6;
+const isOddX = 2;
+const isOddY = 4;
+const isOddZ = 6;
 
-if (numberA % 2 !== 0 || numberB % 2 !== 0 || numberC % 2 !== 0){
+if (isOddX % 2 !== 0 || isOddY % 2 !== 0 || isOddZ % 2 !== 0){
   console.log(true);
 }
 else{
@@ -164,3 +167,47 @@ else{
   profitTotal = soldQuantity * (saleValue - (costValue * (1 + costTax)));
   console.log(profitTotal);
 }
+
+// Calcula o salário líquido de uma pessoa CLT
+let incomeGross = 5000;
+
+// Cálculo do INSS
+let taxINSS = 0;
+
+if(incomeGross <= 1556.94){
+  taxINSS = incomeGross*0.08;
+} 
+else if(incomeGross > 1556.94 && incomeGross <= 2594.92){
+  taxINSS = incomeGross*0.09;
+}
+else if(incomeGross > 2594.92 && incomeGross <= 5189.82){
+  taxINSS = incomeGross*0.11;
+}
+else{
+  taxINSS = 570.88;
+}
+
+// Cálculo do IR
+let taxIR = 0;
+let installment =0;
+let incomeBase = incomeGross - taxINSS;
+
+if(incomeBase <= 1903.98){
+  taxIR = 0;
+}
+else if(incomeBase > 1903.98 && incomeBase <= 2826.65){
+  taxIR = 0.075*incomeBase - 142.80;
+}
+else if(incomeBase > 2826.65 && incomeBase <= 3751.05){
+  taxIR = 0.15*incomeBase - 354.80;
+}
+else if(incomeBase > 3751.05 && incomeBase <= 4664.68){
+  taxIR = 0.225*incomeBase - 636.13;
+}
+else{
+  taxIR = 0.275*incomeBase - 869.36;
+}
+
+let incomeNet = incomeBase - taxIR;
+
+console.log(incomeGross, incomeBase, incomeNet);
