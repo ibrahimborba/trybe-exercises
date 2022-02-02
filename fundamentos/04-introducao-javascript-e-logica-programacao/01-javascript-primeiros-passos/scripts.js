@@ -17,7 +17,7 @@ const perimeter = 2 * (base + height);
 console.log(area, perimeter);
 
 // Exercícios Fixação - If Else
-const grade = 70;
+const grade = 80;
 if (grade >= 80) {
     console.log("Parabéns, você foi aprovada(o)!");
 }
