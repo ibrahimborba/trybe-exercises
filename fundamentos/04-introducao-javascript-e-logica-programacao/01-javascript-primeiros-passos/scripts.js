@@ -61,11 +61,42 @@ const angleY = "50";
 const angleZ = 60;
 
 if (angleX <= 0 || angleY <= 0 || angleZ <= 0 || typeof angleX !== "number" || typeof angleY !== "number" || typeof angleZ !== "number"){
-  console.log("ângulo inválido");
+  console.log("invalid angle");
 }
 else if (angleX + angleY + angleZ !== 180){
   console.log(false);
 }
 else if (angleX + angleY + angleZ === 180){
   console.log(true);
+}
+
+// Retorna o nome de uma peça de xadrez e os movimentos que ela faz
+const pieceName = "Knigth";
+switch (pieceName.toLowerCase()) {
+  case "pawn":
+    console.log("forward");
+    break;
+
+  case "knight":
+    console.log("L shape");
+    break;
+
+  case "bishop":
+    console.log("diagonally");
+    break;
+
+  case "rook":
+    console.log("horizontally or vertically");
+    break;
+
+  case "queen":
+    console.log("any direction");
+    break;
+
+  case "king":
+    console.log("one square any direction");
+    break;
+    
+  default:
+    console.log("invalid piece name");
 }
