@@ -54,3 +54,18 @@ else if(checkSignal < 0){
 else if(checkSignal === 0){
   console.log("zero");
 }
+
+// Checa se os ângulos são de um triângulo
+const angleX = 60;
+const angleY = "50";
+const angleZ = 60;
+
+if (angleX <= 0 || angleY <= 0 || angleZ <= 0 || typeof angleX !== "number" || typeof angleY !== "number" || typeof angleZ !== "number"){
+  console.log("ângulo inválido");
+}
+else if (angleX + angleY + angleZ !== 180){
+  console.log(false);
+}
+else if (angleX + angleY + angleZ === 180){
+  console.log(true);
+}
