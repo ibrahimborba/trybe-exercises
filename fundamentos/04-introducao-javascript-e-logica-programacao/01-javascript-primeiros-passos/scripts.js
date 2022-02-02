@@ -30,7 +30,7 @@ else {
     console.log("Você foi reprovada(o)");
 }
 
-// Exercícios Fixação - Operadores
+// Exercícios Fixação - Operadores &&
 const currentHour = 11;
 let message = "";
 
@@ -54,3 +54,6 @@ else if (currentHour > 4 && currentHour < 11){
 }
 
 console.log(message);
+
+// Exercícios Fixação - Operadores ||
+let weekDay = "quarta-feira";
