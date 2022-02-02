@@ -139,14 +139,28 @@ else{
 }
 
 // Checa se pelo menos um número no conjunto é ímpar
-const numA = 2;
-const numB = 4;
-const numC = 6;
+const numberA = 2;
+const numberB = 4;
+const numberC = 6;
 
-if (numA % 2 !== 0 || numB % 2 !== 0 || numC % 2 !== 0){
+if (numberA % 2 !== 0 || numberB % 2 !== 0 || numberC % 2 !== 0){
   console.log(true);
 }
 else{
   console.log(false);
 }
 
+// Calcula o lucro total da venda de um produto
+const saleValue = 10;
+const costValue = 5;
+const costTax = 0.2;
+let soldQuantity = 1000;
+let profitTotal = 0;
+
+if(saleValue < 0 || costValue < 0 || soldQuantity < 0){
+  console.log("invalid Value");
+}
+else{
+  profitTotal = soldQuantity * (saleValue - (costValue * (1 + costTax)));
+  console.log(profitTotal);
+}
