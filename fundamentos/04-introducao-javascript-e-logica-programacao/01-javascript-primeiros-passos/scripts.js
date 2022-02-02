@@ -1,3 +1,4 @@
+// Faz operações aritméticas básicas
 const a = 2;
 const b = 5;
 
@@ -9,6 +10,7 @@ let modulus = a % b;
 
 console.log (sum, subtract, multiply, divide, modulus);
 
+// Retorna o maior de dois números
 const x = 5;
 const y = 7;
 
@@ -22,6 +24,7 @@ else{
   console.log("x e y são iguais");
 }
 
+// Retorna o maior de três números
 const numX = 5;
 const numY = 5;
 const numZ = 9;
@@ -37,4 +40,17 @@ else if(numZ > numX && numZ > numY){
 }
 else {
   console.log("Há dois números iguais que são os maiores");
+}
+
+// Retorna o sinal de um número (positivo, negativo, zero)
+const checkSignal = 0;
+
+if(checkSignal > 0){
+  console.log("positive");
+}
+else if(checkSignal < 0){
+  console.log("negative");
+}
+else if(checkSignal === 0){
+  console.log("zero");
 }
