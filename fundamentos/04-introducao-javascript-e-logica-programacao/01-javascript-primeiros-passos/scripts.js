@@ -32,3 +32,4 @@ else {
 
 // Exercícios Fixação - Operadores
 const currentHour = 18;
+let message = "";
