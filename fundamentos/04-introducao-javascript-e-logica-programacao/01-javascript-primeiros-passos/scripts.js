@@ -69,4 +69,21 @@ else {
 }
 
 // Exercícios Fixação - Switch Case
-let candidateStatus = "";
+let candidateStatus = "lista";
+
+switch (candidateStatus) {
+    case "aprovada":
+        console.log("aprovada");
+        break;
+
+    case "lista":
+        console.log("lista");
+        break;
+
+    case "reprovada":
+        console.log("reprovada");
+        break;
+
+    default:
+        console.log("não se aplica");
+}
