@@ -126,24 +126,24 @@ else if(gradePercentage < 50){
   console.log("grade F");
 }
 
-// Checa se pelo menos um número no conjunto é ímpar
-const numA = 2;
-const numB = 4;
-const numC = 6;
-
-if (numA % 2 !== 0 || numB % 2 !== 0 || numC % 2 !== 0){
-  console.log(true);
-}
-else{
-  console.log(false);
-}
-
 // Checa se pelo menos um número no conjunto é par
 const numberX = 1;
 const numberY = 1;
 const numberZ = 1;
 
 if (numberX % 2 === 0 || numberY % 2 === 0 || numberZ % 2 === 0){
+  console.log(true);
+}
+else{
+  console.log(false);
+}
+
+// Checa se pelo menos um número no conjunto é ímpar
+const numA = 2;
+const numB = 4;
+const numC = 6;
+
+if (numA % 2 !== 0 || numB % 2 !== 0 || numC % 2 !== 0){
   console.log(true);
 }
 else{
