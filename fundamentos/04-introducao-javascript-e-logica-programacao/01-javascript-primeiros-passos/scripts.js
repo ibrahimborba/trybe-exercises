@@ -52,3 +52,5 @@ else if (currentHour > 11 && currentHour < 14){
 else if (currentHour > 4 && currentHour < 11){
     message = "Hmmm, cheiro de café recém passado";
 }
+
+console.log(message);
