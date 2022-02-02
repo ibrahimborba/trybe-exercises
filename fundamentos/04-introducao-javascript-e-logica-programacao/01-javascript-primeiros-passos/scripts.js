@@ -29,3 +29,6 @@ else if (grade < 80 && grade >= 60) {
 else {
     console.log("Você foi reprovada(o)");
 }
+
+// Exercícios Fixação - Operadores
+const currentHour = 18;
