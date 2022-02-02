@@ -67,3 +67,6 @@ else if (weekDay === "sábado" || weekDay === "domingo") {
 else {
     console.log("Ué, não conheço esse dia da semana :(");
 }
+
+// Exercícios Fixação - Switch Case
+let candidateStatus = "";
