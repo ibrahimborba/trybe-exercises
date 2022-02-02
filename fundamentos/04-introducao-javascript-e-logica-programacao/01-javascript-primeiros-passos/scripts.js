@@ -21,3 +21,20 @@ else if(y > x){
 else{
   console.log("x e y são iguais");
 }
+
+const numX = 5;
+const numY = 5;
+const numZ = 9;
+
+if(numX > numY && numX > numZ){
+  console.log("numX é o maior número");
+}
+else if(numY > numX && numY > numZ){
+  console.log("numY é o maior número");
+}
+else if(numZ > numX && numZ > numY){
+  console.log("numZ é o maior número");
+}
+else {
+  console.log("Há dois números iguais que são os maiores");
+}
