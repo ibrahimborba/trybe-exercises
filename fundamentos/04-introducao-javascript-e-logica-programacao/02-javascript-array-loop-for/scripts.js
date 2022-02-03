@@ -19,3 +19,16 @@ for(let index = 0; index < numbers.length; index += 1){
 }
 mean = sumMean/numbers.length;
 console.log(mean);
+
+/*Checa se a media é maior que 20*/
+let meanCompare = 0;
+
+for(let index = 0; index < numbers.length; index += 1){
+  meanCompare += numbers[index];
+}
+
+if(meanCompare/numbers.length > 20){
+  console.log('valor maior que 20');
+}else{
+  console.log('valor menor ou igual a 20');
+}
