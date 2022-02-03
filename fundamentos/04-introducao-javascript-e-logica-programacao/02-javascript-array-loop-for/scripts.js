@@ -55,3 +55,12 @@ if(oddCounter > 0){
 }else{
   console.log('nenhum valor ímpar encontrado');
 }
+
+/*Descobre o menor valor dentro do array*/
+let smallest = largest;
+for(let index = 0; index < numbers.length; index += 1){
+  if(numbers[index] < smallest){
+    smallest = numbers[index];
+  }
+}
+console.log('o menor valor é ' + smallest);
