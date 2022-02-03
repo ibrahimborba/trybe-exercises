@@ -56,7 +56,7 @@ if(oddCounter > 0){
   console.log('nenhum valor ímpar encontrado');
 }
 
-/*Descobre o menor valor dentro do array*/
+/*Descobre o menor valor dentro do array aproveitando o resultado do exercício de maior valor*/
 let smallest = largest;
 for(let index = 0; index < numbers.length; index += 1){
   if(numbers[index] < smallest){
@@ -103,7 +103,7 @@ for (let index = 1; index < numbers.length; index += 1) {
 }
 console.log(numbers);
 
-/*Multiplica pelo elemento seguinte*/
+/*Multiplica um elemento do array pelo elemento seguinte*/
 numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let multiplyByNext = [];
 for(let index = 0; index < numbers.length-1; index += 1){
