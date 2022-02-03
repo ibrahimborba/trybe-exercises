@@ -67,7 +67,14 @@ console.log('o menor valor é ' + smallest);
 
 /*Cria um array que vai de 1 a 25*/
 let array = [];
-for (let increase = 1; increase <= 25; increase += 1){
-  array.push(increase);
+for (let increment = 1; increment <= 25; increment += 1){
+  array.push(increment);
 }
 console.log(array);
+
+/*Divide os elementos do array anterior por 2*/
+let arrayDivide = [];
+for(let index = 0; index < array.length; index += 1){
+  arrayDivide.push(array[index]/2); 
+}
+console.log(arrayDivide);
