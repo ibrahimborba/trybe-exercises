@@ -64,3 +64,10 @@ for(let index = 0; index < numbers.length; index += 1){
   }
 }
 console.log('o menor valor é ' + smallest);
+
+/*Cria um array que vai de 1 a 25*/
+let array = [];
+for (let increase = 1; increase <= 25; increase += 1){
+  array.push(increase);
+}
+console.log(array);
