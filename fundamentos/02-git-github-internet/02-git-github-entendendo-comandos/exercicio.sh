@@ -6,7 +6,7 @@ cd 02-git-github-entendendo-comandos
 #Parte 2
 git status
 git add .
-git commit -m "adiciona arquvi .txt"
+git commit -m "adiciona arquivo .txt"
 git push
 
 #Parte 3
