@@ -39,4 +39,19 @@ for(let index = 0; index < numbers.length; index += 1){
     largest = numbers[index];
   }
 }
-console.log(largest);
+console.log('o maior valor é ' + largest);
+
+/*Conta valores impares*/
+let isOdd = 0;
+let oddCounter = 0;
+for(let index = 0; index < numbers.length; index += 1){
+  isOdd = numbers[index];
+  if(isOdd % 2 !== 0){
+    oddCounter += 1;
+  }
+}
+if(oddCounter > 0){
+  console.log('há ' + oddCounter + ' números ímpares');
+}else{
+  console.log('nenhum valor ímpar encontrado');
+}
