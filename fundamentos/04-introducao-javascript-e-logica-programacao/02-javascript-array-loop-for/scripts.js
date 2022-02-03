@@ -10,3 +10,12 @@ for(let index = 0; index < numbers.length; index += 1){
   sum += numbers[index];
 }
 console.log(sum);
+
+/*Média aritmética do array*/
+let mean = 0;
+let sumMean = 0;
+for(let index = 0; index < numbers.length; index += 1){
+  sumMean += numbers[index];
+}
+mean = sumMean/numbers.length;
+console.log(mean);
