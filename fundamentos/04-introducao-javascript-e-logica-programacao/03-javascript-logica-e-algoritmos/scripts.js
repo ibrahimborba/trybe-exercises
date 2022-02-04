@@ -50,3 +50,12 @@ for (let number = 1; number <= 50; number += 1) {
 }
 console.log(isPrime);
 
+// Imprime quadrado de lado n asteriscos
+let n = 5;
+for (let i = 0; i < n; i += 1){
+  let asterisk = '';
+  for (let j = 0; j < n; j += 1){
+    asterisk += '*';
+  }
+  console.log(asterisk);
+}
