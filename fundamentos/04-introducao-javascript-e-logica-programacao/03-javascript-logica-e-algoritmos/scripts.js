@@ -59,3 +59,12 @@ for (let i = 0; i < n; i += 1){
   }
   console.log(asterisk);
 }
+
+// Imprime triangulo de base n asteriscos
+let n = 5;
+let asterisk = '';
+for (let i = 0; i < n; i += 1){
+  asterisk += '*';
+  console.log(asterisk);
+}
+
