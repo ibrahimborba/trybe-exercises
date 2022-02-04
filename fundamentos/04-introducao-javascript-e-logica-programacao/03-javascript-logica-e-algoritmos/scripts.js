@@ -13,7 +13,30 @@ for (let i = word.length-1; i >= 0; i -= 1) {
 }
 console.log('O inverso da palavra ' + word + " é " + wordInverse);
 
-// Retorna maior e menor palavras dentro do array
+// Retorna maior e menor palavras dentro do array - solução com str.length
+let array = ['java', 'javascript', 'python', 'html', 'css'];
+let largest = 1;
+let smallest = 45;
+for (let i = 0; i < array.length; i += 1){
+  if(array[i].length > largest){
+    largest = array[i].length;
+  }else if(array[i].length < smallest){
+    smallest = array[i].length;
+  }
+}
+
+let largeWord = "";
+let smallWord = "";
+for (let i = 0; i < array.length; i += 1){
+  if(array[i].length === largest){
+    largeWord = array[i];
+  }else if(array[i].length === smallest){
+    smallWord = array[i];
+  }
+}
+console.log('A maior palavra é ' + largeWord + ' e a menor palavra é ' + smallWord);
+
+// Retorna maior e menor palavras dentro do array - solução com array[i]
 let array = ['java', 'javascript', 'python', 'html', 'css'];
 let arrayCount = [];
 for (let i = 0; i < array.length; i += 1){
