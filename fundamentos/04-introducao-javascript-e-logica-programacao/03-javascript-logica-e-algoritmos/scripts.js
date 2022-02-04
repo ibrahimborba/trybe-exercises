@@ -35,3 +35,18 @@ for (let i = 0; i < arrayCount.length; i += 1){
 }
 
 console.log('A maior palavra é ' + array[arrayCount.indexOf(largest)] + ' e a menor palavra é ' + array[arrayCount.indexOf(smallest)]);
+
+//Retorna o maior número primo entre 1 e 50
+// Source: https://medium.com/swlh/an-algorithm-a-day-how-to-check-for-a-prime-number-in-javascript-7052630fb4ef
+let isPrime = 0;
+for (let number = 1; number <= 50; number += 1) {
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0){
+      break;
+    }else{
+      isPrime = number;
+    }
+  }
+}
+console.log(isPrime);
+
