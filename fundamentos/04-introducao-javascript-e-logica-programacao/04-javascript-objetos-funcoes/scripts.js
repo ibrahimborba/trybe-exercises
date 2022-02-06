@@ -1,10 +1,10 @@
+// Imprime no console uma mensagem d eboas vindas com o nome da personagem
 let info = {
   personagem: 'Margarida',
   origem: 'Pato Donald',
   nota: 'Namorada do personagem principal nos quadrinhos do Pato Donald',
 };
 
-// Imprime no console uma mensagem d eboas vindas com o nome da personagem
 console.log('Bem-vinda, ' + info['personagem']);
 
 // Insere nova propriedade no objeto e imprime o objeto
@@ -36,5 +36,20 @@ for(let key in info) {
   }else{
     console.log(info[key] + ' e ' + infoTwo[key]);
   }
-  
 }
+
+//Acesse as chaves nome , sobrenome e titulo, e faça um console.log
+let leitor = {
+  nome: 'Julia',
+  sobrenome: 'Pessoa',
+  idade: 21,
+  livrosFavoritos: [
+    {
+      titulo: 'O Pior Dia de Todos',
+      autor: 'Daniela Kopsch',
+      editora: 'Tordesilhas',
+    },
+  ],
+};
+
+console.log('O livro favorito de ' + leitor['nome'] + ' ' + leitor['sobrenome'] + ' se chama ' + "'" + leitor['livrosFavoritos'][0]['titulo'] + "'");
