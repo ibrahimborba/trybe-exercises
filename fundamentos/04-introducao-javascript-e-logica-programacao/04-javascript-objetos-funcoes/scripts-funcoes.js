@@ -16,7 +16,7 @@ console.log(checkPalindrome ('desenvolvimento'));
 //Retorna o índice do maior valor de um array
 function indexOfBiggest (array) {
   let biggest = 0;
-  for (let i = 0; i < array.length; i += 1){
+  for (let i in array){
     if (array[i] > biggest){
       biggest = array[i];
     }
@@ -30,7 +30,7 @@ console.log(indexOfBiggest(array));
 //Retorna o índice do menor valor de um array
 function indexOfSmallest(array) {
   let smallest = array[0];
-  for (let i = 0; i < array.length; i += 1){
+  for (let i in array){
     if (array[i] < smallest){
       smallest = array[i];
     }
@@ -40,3 +40,17 @@ function indexOfSmallest(array) {
 
 let array = [2, 4, 6, 7, 10, 0, -3];
 console.log(indexOfSmallest(array));
+
+//Retorna o nome com a maior quantidade de caracteres
+function mostChars(array) {
+  let biggest = array[0];
+  for(let i = 0; i < array.length; i += 1){
+    if(array[i].length > biggest.length){
+      biggest = array[i];
+    }
+  }
+  return biggest;
+}
+
+let names = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
+console.log(mostChars(names));
