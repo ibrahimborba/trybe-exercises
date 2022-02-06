@@ -13,7 +13,7 @@ function checkPalindrome(word) {
 
 console.log(checkPalindrome ('desenvolvimento'));
 
-//Retorna o índice do maior valor d eum array
+//Retorna o índice do maior valor de um array
 function indexOfBiggest (array) {
   let biggest = 0;
   for (let i = 0; i < array.length; i += 1){
@@ -26,3 +26,17 @@ function indexOfBiggest (array) {
 
 let array = [2, 3, 6, 7, 10, 1];
 console.log(indexOfBiggest(array));
+
+//Retorna o índice do menor valor de um array
+function indexOfSmallest(array) {
+  let smallest = array[0];
+  for (let i = 0; i < array.length; i += 1){
+    if (array[i] < smallest){
+      smallest = array[i];
+    }
+  }
+  return array.indexOf(smallest);
+}
+
+let array = [2, 4, 6, 7, 10, 0, -3];
+console.log(indexOfSmallest(array));
