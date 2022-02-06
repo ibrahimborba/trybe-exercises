@@ -16,3 +16,8 @@ console.log(info);
 for(let keys in info){
   console.log(keys);
 }
+
+// Mostra os valores das keys do objeto
+for(let keys in info){
+  console.log(info[keys]);
+}
