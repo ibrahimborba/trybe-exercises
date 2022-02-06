@@ -11,3 +11,8 @@ console.log('Bem-vinda, ' + info['personagem']);
 info['recorrente'] = 'Sim';
 
 console.log(info);
+
+// Mostra as keys do objeto
+for(let keys in info){
+  console.log(keys);
+}
