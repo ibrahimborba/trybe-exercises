@@ -44,7 +44,7 @@ console.log(indexOfSmallest(array));
 //Retorna o nome com a maior quantidade de caracteres
 function mostChars(array) {
   let biggest = array[0];
-  for(let i = 0; i < array.length; i += 1){
+  for(let i in array){
     if(array[i].length > biggest.length){
       biggest = array[i];
     }
@@ -54,3 +54,14 @@ function mostChars(array) {
 
 let names = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
 console.log(mostChars(names));
+
+//Retorna soma somatoria de 1 a 'n'
+function summation(number) {
+  let sum = 0;
+  for (let i = 1; i <= number; i += 1){
+    sum += i;
+  }
+  return sum;
+}
+
+console.log(summation(5));
