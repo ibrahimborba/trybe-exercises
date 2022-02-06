@@ -38,7 +38,7 @@ for(let key in info) {
   }
 }
 
-//Acesse as chaves nome , sobrenome e titulo, e faça um console.log
+//Acessa as chaves 'nome', 'sobrenome' e 'titulo', e faz um console.log
 let leitor = {
   nome: 'Julia',
   sobrenome: 'Pessoa',
@@ -53,3 +53,11 @@ let leitor = {
 };
 
 console.log('O livro favorito de ' + leitor['nome'] + ' ' + leitor['sobrenome'] + ' se chama ' + "'" + leitor['livrosFavoritos'][0]['titulo'] + "'");
+
+//Adiciona um novo livro favorito na chave 'livrosFavoritos'
+
+leitor.livrosFavoritos.push({
+  titulo: 'Harry Potter e o Prisioneiro de Azkaban',
+  autor: 'JK Rowling',
+  editora: 'Rocco',
+})
