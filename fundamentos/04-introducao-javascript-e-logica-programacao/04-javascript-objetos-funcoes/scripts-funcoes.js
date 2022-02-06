@@ -65,3 +65,16 @@ function summation(number) {
 }
 
 console.log(summation(5));
+
+//Verifica se uma string é o final de outra
+function checkWordEnding(word, ending){
+  if(word.slice(- ending.length) === ending){
+    return true;
+  }else{
+    return false;
+  }  
+}
+
+console.log(checkWordEnding('joaofernando', 'fernan'));
+
+
