@@ -55,7 +55,27 @@ function mostChars(array) {
 let names = ['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana'];
 console.log(mostChars(names));
 
-//Retorna soma somatoria de 1 a 'n'
+//Retorna o número que mais se repete
+function mostRepeats(array) {
+  let counter = 0;
+  let biggestCounter = 0;
+  for(let i = 0; i < array.length; i += 1){
+    for(let j = 0; j < array.length; j += 1){
+      if(array[i] === array[j]){
+        counter += 1;
+      }
+    }
+    if(counter > biggestCounter){
+      biggestCounter = counter;
+      return array[i];
+    }
+  }
+}
+
+let array = [2, 3, 2, 5, 8, 2, 3];
+console.log(mostRepeats(array));
+
+//Retorna a somatoria de 1 a 'n'
 function summation(number) {
   let sum = 0;
   for (let i = 1; i <= number; i += 1){
