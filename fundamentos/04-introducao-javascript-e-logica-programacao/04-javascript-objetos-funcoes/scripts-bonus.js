@@ -87,35 +87,37 @@ for (let i in basket){
 console.log(fruitsQuantity);
 
 // Converte algarismos romanos em números
-const romanNumeral = {
-  I: 1,
-  V: 5,
-  X: 10,
-  L: 50,
-  C: 100,
-  D: 500,
-  M: 1000
-}
-
-let romanNumber = 'XIV';
-
-let array = romanNumber.split('');
-for (let i in array){
-  for (let j in romanNumeral){
-    if (array[i] === j) {
-      array[i] = romanNumeral[j];
-    }    
+function romanToNumber(roman) {
+  const romanNumeral = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
   }
-}
 
-let number = array[0];
-let subSum = 0;
-for (let i = 1; i < array.length; i += 1){
-  if(array[i] <= array[i - 1]){
-    number += array[i];
-  } else if (array[i] > array[i - 1]) {
-    number += array[i] - 2 * array[i - 1];
+  let array = roman.split('');
+  for (let i in array){
+    for (let j in romanNumeral){
+      if (array[i] === j) {
+        array[i] = romanNumeral[j];
+      }    
+    }
   }
+
+  let number = array[0];
+  let subSum = 0;
+  for (let i = 1; i < array.length; i += 1){
+    if(array[i] <= array[i - 1]){
+      number += array[i];
+    } else if (array[i] > array[i - 1]) {
+      number += array[i] - 2 * array[i - 1];
+    }
+  }
+  return number
 }
 
-console.log(number);
+let roman = 'MCMXCIX';
+console.log(romanToNumber(roman));
