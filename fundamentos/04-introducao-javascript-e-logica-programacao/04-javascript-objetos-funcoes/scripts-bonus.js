@@ -47,3 +47,10 @@ let moradores = {
 };
 
 console.log('O morador do bloco 2 de nome ' + moradores['blocoDois'][1]['nome'] + ' ' +  moradores['blocoDois'][1]['sobrenome'] + ' mora no ' + moradores['blocoDois'][1]['andar'] + '° andar, apartamento ' +  moradores['blocoDois'][1]['apartamento']);
+
+// Imprime o nome completo de todos os moradores do bloco 1 e do bloco 2
+for(let i in moradores){
+  for(let j = 0; j < moradores[i].length; j += 1){
+      console.log(moradores[i][j]['nome'] + ' ' + moradores[i][j]['sobrenome']);
+  }
+}
