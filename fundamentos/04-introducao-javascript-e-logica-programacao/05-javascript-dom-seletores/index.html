@@ -69,8 +69,12 @@
        }
        changeToWhite();
 
+       function correctsH1() {
+        document.getElementsByTagName('h1')[0].innerText = 'Exercício 5.1 - JavaScript';         
+       }
+       correctsH1();
+
        function changeToUpperCase() {
-        document.getElementsByTagName('h1')[0].innerText = 'Exercício 5.1 - JavaScript';
         let paragraph = document.getElementsByTagName('p')[0];
         paragraph.innerHTML = paragraph.innerHTML.toUpperCase();         
        }
