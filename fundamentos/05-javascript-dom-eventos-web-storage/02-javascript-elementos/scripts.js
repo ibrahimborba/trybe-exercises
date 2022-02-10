@@ -23,3 +23,8 @@ section.appendChild(paragraph);
 let sectionLeft = document.createElement('section');
 sectionLeft.className = 'left-content';
 main.appendChild(sectionLeft);
+
+// 06 - Adiciona section right filha da main
+let sectionRight = document.createElement('section');
+sectionRight.className = 'right-content';
+main.appendChild(sectionRight);
