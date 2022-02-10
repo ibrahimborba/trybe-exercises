@@ -34,3 +34,24 @@ let image = document.createElement('img');
 image.className = 'small-image';
 image.src = 'https://picsum.photos/200';
 sectionLeft.appendChild(image);
+
+// 08 - Adiciona lista nao ordenada filha da section right
+let numberList = [
+  'um',
+  'dois',
+  'três',
+  'quatro',
+  'cinco',
+  'seis',
+  'sete',
+  'oito',
+  'nove',
+  'dez'
+];
+
+for (let i = 0; i < numberList.length; i += 1){
+  let number = numberList[i];
+  let list = document.createElement('ul');
+  list.innerText = number;
+  sectionRight.appendChild(list);
+}
