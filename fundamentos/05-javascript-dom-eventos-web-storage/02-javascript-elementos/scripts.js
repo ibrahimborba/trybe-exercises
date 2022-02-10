@@ -76,3 +76,6 @@ h3Three.className = 'description';
 
 // 03 - Remove section left
 main.removeChild(sectionLeft);
+
+// 04 - Centraliza section right
+document.getElementsByClassName('right-content')[0].style.marginRight = 'auto';
