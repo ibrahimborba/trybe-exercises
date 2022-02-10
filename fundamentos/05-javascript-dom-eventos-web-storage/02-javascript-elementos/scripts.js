@@ -55,3 +55,10 @@ for (let i = 0; i < numberList.length; i += 1){
   list.innerText = number;
   sectionRight.appendChild(list);
 }
+
+
+// 09 - Adiciona três tags h3 filhas da main
+let h3One = document.createElement('h3');
+let h3Two = document.createElement('h3');
+let h3Three = document.createElement('h3');
+main.appendChild(h3One, h3Two, h3Three);
