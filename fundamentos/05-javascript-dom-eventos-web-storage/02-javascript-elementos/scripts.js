@@ -18,3 +18,8 @@ main.appendChild(section);
 let paragraph = document.createElement('p');
 paragraph.innerText = 'Lorem ipsum';
 section.appendChild(paragraph);
+
+// 05 - Adiciona section left filha da main
+let sectionLeft = document.createElement('section');
+sectionLeft.className = 'left-content';
+main.appendChild(sectionLeft);
