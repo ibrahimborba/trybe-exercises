@@ -28,3 +28,9 @@ main.appendChild(sectionLeft);
 let sectionRight = document.createElement('section');
 sectionRight.className = 'right-content';
 main.appendChild(sectionRight);
+
+// 07 - Adiciona img filha da section left
+let image = document.createElement('img');
+image.className = 'small-image';
+image.src = 'https://picsum.photos/200';
+sectionLeft.appendChild(image);
