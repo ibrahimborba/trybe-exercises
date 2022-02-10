@@ -79,3 +79,6 @@ main.removeChild(sectionLeft);
 
 // 04 - Centraliza section right
 document.getElementsByClassName('right-content')[0].style.marginRight = 'auto';
+
+// 05 - Muda cor section center
+document.getElementsByClassName('center-content')[0].style.background = 'green';
