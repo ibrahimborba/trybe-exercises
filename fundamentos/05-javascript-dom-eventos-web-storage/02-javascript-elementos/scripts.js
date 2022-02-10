@@ -1,3 +1,4 @@
+//Parte 1 - Criação de elementos
 // 01 - Adiciona h1 como filha da body
 let body = document.getElementsByTagName('body')[0];
 let bodyTitle = document.createElement('h1');
@@ -62,3 +63,8 @@ let h3One = document.createElement('h3');
 let h3Two = document.createElement('h3');
 let h3Three = document.createElement('h3');
 main.appendChild(h3One, h3Two, h3Three);
+
+
+//Parte 2 - Alteração e remoção de elementos
+// 01 - Adiciona classe title na tag h1
+bodyTitle.className = 'title';
