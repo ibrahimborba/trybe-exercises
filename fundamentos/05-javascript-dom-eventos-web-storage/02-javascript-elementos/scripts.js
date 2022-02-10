@@ -4,3 +4,7 @@ let bodyTitle = document.createElement('h1');
 bodyTitle.innerText = 'Exercício 5.2 - JavaScript DOM';
 body.appendChild(bodyTitle);
 
+// 02 - Adiciona main como filha da body
+let main = document.createElement('main');
+main.className = 'main-content';
+body.appendChild(main);
