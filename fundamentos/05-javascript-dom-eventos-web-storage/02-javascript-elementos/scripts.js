@@ -50,13 +50,16 @@ let numberList = [
   'dez'
 ];
 
+let list = document.createElement('ul');
+
 for (let i = 0; i < numberList.length; i += 1){
   let number = numberList[i];
-  let list = document.createElement('ul');
-  list.innerText = number;
-  sectionRight.appendChild(list);
+  let listItem = document.createElement('li');
+  listItem.innerText = number;
+  list.appendChild(listItem);
 }
 
+sectionRight.appendChild(list);
 
 // 09 - Adiciona três tags h3 filhas da main
 let h3One = document.createElement('h3');
@@ -82,3 +85,12 @@ document.getElementsByClassName('right-content')[0].style.marginRight = 'auto';
 
 // 05 - Muda cor section center
 document.getElementsByClassName('center-content')[0].style.background = 'green';
+
+// 06 - Remove dois ultimos elementos da lista
+
+let listItem = document.getElementsByTagName('li');
+for (let  i = listItem.length - 1; i >= listItem.length - 2; i -= 1) {
+  if (listItem[i].innerText.includes('nove') || listItem[i].innerText.includes('dez')){
+    list.removeChild(listItem[i]);
+  }
+}
