@@ -87,7 +87,6 @@ document.getElementsByClassName('right-content')[0].style.marginRight = 'auto';
 document.getElementsByClassName('center-content')[0].style.background = 'green';
 
 // 06 - Remove dois ultimos elementos da lista
-
 let listItem = document.getElementsByTagName('li');
 for (let  i = listItem.length - 1; i >= listItem.length - 2; i -= 1) {
   if (listItem[i].innerText.includes('nove') || listItem[i].innerText.includes('dez')){
