@@ -73,3 +73,6 @@ bodyTitle.className = 'title';
 h3One.className = 'description';
 h3Two.className = 'description';
 h3Three.className = 'description';
+
+// 03 - Remove section left
+main.removeChild(sectionLeft);
