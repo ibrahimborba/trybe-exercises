@@ -8,3 +8,8 @@ body.appendChild(bodyTitle);
 let main = document.createElement('main');
 main.className = 'main-content';
 body.appendChild(main);
+
+// 03 - Adiciona section como filha da main
+let section = document.createElement('section');
+section.className = 'center-content';
+main.appendChild(main);
