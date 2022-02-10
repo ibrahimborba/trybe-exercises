@@ -68,3 +68,8 @@ main.appendChild(h3One, h3Two, h3Three);
 //Parte 2 - Alteração e remoção de elementos
 // 01 - Adiciona classe title na tag h1
 bodyTitle.className = 'title';
+
+// 02 - Adiciona classe description nas h3
+h3One.className = 'description';
+h3Two.className = 'description';
+h3Three.className = 'description';
