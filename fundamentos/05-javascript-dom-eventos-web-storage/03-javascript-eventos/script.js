@@ -24,20 +24,39 @@ for (let i in dezDaysList) {
   dayListItem.innerHTML = dezDaysList[i];
   dayListItem.className = 'day';
   if (dayListItem.innerText === '24' || dayListItem.innerText === '31') {
-    dayListItem.className = 'day holiday';
+    dayListItem.className += ' holiday';
   } else if (dayListItem.innerText === '4' || dayListItem.innerText === '11' || dayListItem.innerText === '18') {
-    dayListItem.className = 'day friday';
+    dayListItem.className += ' friday';
   } else if (dayListItem.innerText === '25') {
-    dayListItem.className = 'day friday holiday';
+    dayListItem.className += ' friday holiday';
   }
   daysList.appendChild(dayListItem);
 }
 
+// 02 - Cria botão para feriado
 function holidayButton(string) {
   let buttonContainer = document.getElementsByClassName('buttons-container')[0];
-  let holidayButton = document.createElement('button');
-  holidayButton.id = 'btn-holiday';
-  holidayButton.innerHTML = string;
-  buttonContainer.appendChild(holidayButton);
+  let buttonHoliday = document.createElement('button');
+  buttonHoliday.id = 'btn-holiday';
+  buttonHoliday.innerHTML = string;
+  buttonContainer.appendChild(buttonHoliday);
 }
 holidayButton('Feriados');
+
+// 03 - Adiciona evento de click ao buttonHoliday que altera a cor de fundo dos feriados
+let buttonHoliday = document.getElementById('btn-holiday');
+buttonHoliday.addEventListener('click', (holidayColor));
+
+function holidayColor () {
+  let holiday = document.getElementsByClassName('holiday');
+  for (let i = 0; i < holiday.length; i += 1) {
+    if (holiday[i].style.backgroundColor !== 'green') {
+      holiday[i].style.backgroundColor = 'green';
+      holiday[i].style.color = 'white';
+    } else {
+      holiday[i].style.backgroundColor = 'rgb(238,238,238)';
+      holiday[i].style.color = '#777';
+    }
+  }
+     
+}
