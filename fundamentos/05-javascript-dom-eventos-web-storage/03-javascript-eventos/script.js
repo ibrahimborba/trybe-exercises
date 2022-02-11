@@ -45,7 +45,7 @@ holidayButton('Feriados');
 
 // 03 - Adiciona evento de click ao buttonHoliday que altera a cor de fundo dos feriados
 let buttonHoliday = document.getElementById('btn-holiday');
-buttonHoliday.addEventListener('click', (holidayColor));
+buttonHoliday.addEventListener('click', holidayColor);
 
 function holidayColor () {
   let holiday = document.getElementsByClassName('holiday');
@@ -72,7 +72,7 @@ fridayButton('Sexta-feira');
 
 // 05 - Adiciona evento de click ao buttonFriday que altera o texto das sextas-feiras
 let buttonFriday = document.getElementById('btn-friday');
-buttonFriday.addEventListener('click', (fridayText));
+buttonFriday.addEventListener('click', fridayText);
 
 // Cria um array para transformar em sextou e outro para guardar os dias originais
 let friday = document.getElementsByClassName('friday');
@@ -90,3 +90,17 @@ function fridayText () {
     }
   }
 }
+
+// 06 - Efeito de zoom com mouseover e mouseleave nos dias do mês do calendário
+let daysZoom = document.getElementById('days');
+
+daysZoom.addEventListener('mouseover', zoomIn);
+function zoomIn (event) {
+  event.target.style.fontSize = '30px';
+}
+
+daysZoom.addEventListener('mouseout', zoomOut);
+function zoomOut (event) {
+  event.target.style.fontSize = '20px';
+}
+
