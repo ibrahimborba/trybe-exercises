@@ -104,3 +104,11 @@ function zoomOut (event) {
   event.target.style.fontSize = '20px';
 }
 
+// 07 - Adiciona uma tarefa personalizada
+function addTask (task) {
+  let taskElement = document.createElement('span');
+  taskElement.innerText = task;
+  let myTasks = document.getElementsByClassName('my-tasks')[0];
+  myTasks.appendChild(taskElement);
+}
+addTask();
