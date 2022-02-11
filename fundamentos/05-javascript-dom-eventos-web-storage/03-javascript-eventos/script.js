@@ -109,7 +109,7 @@ let myTasks = document.getElementsByClassName('my-tasks')[0];
 
 function addTask (task) {
   let taskElement = document.createElement('span');
-  taskElement.innerText = task;
+  taskElement.innerHTML = task;
   myTasks.appendChild(taskElement);
 }
 addTask('cozinhar');
@@ -118,7 +118,8 @@ addTask('cozinhar');
 function colorizeNote (color) {
   let noteColor = document.createElement('div');
   noteColor.className = 'task';
-  noteColor.style.backgroundColor = color;
+  noteColor.style.border = 'thick solid';
+  noteColor.style.borderColor = color;
   myTasks.appendChild(noteColor);  
 }
 colorizeNote('green');
@@ -130,11 +131,24 @@ function selectTask () {
   taskSelectDeselect.addEventListener('click', selectDeselect);
   function selectDeselect () {
     if (taskSelectDeselect.className === 'task') {
-      taskSelectDeselect.className = 'task selected';
+      taskSelectDeselect.className += ' selected';
+      taskSelectDeselect.style.backgroundColor = 'green';
     } else {
       taskSelectDeselect.className = 'task';
+      taskSelectDeselect.style.backgroundColor = 'white';
     }
   }
 }
-
 selectTask();
+
+// 10 - Adiciona cor no dia do mês clicado
+let taskSelected = document.getElementsByClassName('task')[0];
+daysZoom.addEventListener('click', colorizeDay);
+function colorizeDay (event) {
+  if (taskSelected.className === 'task selected') {
+    event.target.style.color = 'green';
+  } else {
+    event.target.style.color = '#777';
+  }
+}
+
