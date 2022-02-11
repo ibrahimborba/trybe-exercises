@@ -32,3 +32,12 @@ for (let i in dezDaysList) {
   }
   daysList.appendChild(dayListItem);
 }
+
+function holidayButton(string) {
+  let buttonContainer = document.getElementsByClassName('buttons-container')[0];
+  let holidayButton = document.createElement('button');
+  holidayButton.id = 'btn-holiday';
+  holidayButton.innerHTML = string;
+  buttonContainer.appendChild(holidayButton);
+}
+holidayButton('Feriados');
