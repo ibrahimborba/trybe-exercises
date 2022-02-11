@@ -105,10 +105,19 @@ function zoomOut (event) {
 }
 
 // 07 - Adiciona uma tarefa personalizada
+let myTasks = document.getElementsByClassName('my-tasks')[0];
+
 function addTask (task) {
   let taskElement = document.createElement('span');
   taskElement.innerText = task;
-  let myTasks = document.getElementsByClassName('my-tasks')[0];
   myTasks.appendChild(taskElement);
 }
-addTask();
+addTask('cozinhar');
+
+// 08 - Adiciona cor para legenda
+function colorizeNote (color) {
+  let noteColor = document.createElement('div');
+  noteColor.style.backgroundColor = color;
+  myTasks.appendChild(noteColor);  
+}
+colorizeNote('red');
