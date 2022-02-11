@@ -58,5 +58,14 @@ function holidayColor () {
       holiday[i].style.color = '#777';
     }
   }
-     
 }
+
+// 04 - Cria botão para sexta-feiras
+function fridayButton(string) {
+  let buttonContainer = document.getElementsByClassName('buttons-container')[0];
+  let buttonFriday = document.createElement('button');
+  buttonFriday.id = 'btn-friday';
+  buttonFriday.innerHTML = string;
+  buttonContainer.appendChild(buttonFriday);
+}
+fridayButton('Sexta-feira');
