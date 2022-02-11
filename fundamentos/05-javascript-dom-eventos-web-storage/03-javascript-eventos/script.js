@@ -69,3 +69,24 @@ function fridayButton(string) {
   buttonContainer.appendChild(buttonFriday);
 }
 fridayButton('Sexta-feira');
+
+// 05 - Adiciona evento de click ao buttonFriday que altera o texto das sextas-feiras
+let buttonFriday = document.getElementById('btn-friday');
+buttonFriday.addEventListener('click', (fridayText));
+
+// Cria um array para transformar em sextou e outro para guardar os dias originais
+let friday = document.getElementsByClassName('friday');
+let fridayDays = [];
+for (let i = 0; i < friday.length; i += 1) {
+  fridayDays.push(friday[i].innerText);
+}
+
+function fridayText () {
+  for (let i = 0; i < friday.length; i += 1) {
+    if (friday[i].innerText !== 'sextou!') {
+      friday[i].innerText = 'sextou!';
+    } else if (friday[i].innerText === 'sextou!') {
+      friday[i].innerText = fridayDays[i];
+    }
+  }
+}
