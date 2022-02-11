@@ -117,7 +117,24 @@ addTask('cozinhar');
 // 08 - Adiciona cor para legenda
 function colorizeNote (color) {
   let noteColor = document.createElement('div');
+  noteColor.className = 'task';
   noteColor.style.backgroundColor = color;
   myTasks.appendChild(noteColor);  
 }
-colorizeNote('red');
+colorizeNote('green');
+
+// 09 - Adiciona um evento que seleciona a task
+function selectTask () {
+  let taskSelectDeselect = document.getElementsByClassName('task')[0];
+
+  taskSelectDeselect.addEventListener('click', selectDeselect);
+  function selectDeselect () {
+    if (taskSelectDeselect.className === 'task') {
+      taskSelectDeselect.className = 'task selected';
+    } else {
+      taskSelectDeselect.className = 'task';
+    }
+  }
+}
+
+selectTask();
