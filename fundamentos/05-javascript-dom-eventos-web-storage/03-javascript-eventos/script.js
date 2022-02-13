@@ -145,9 +145,9 @@ selectTask();
 let taskSelected = document.getElementsByClassName('task')[0];
 daysZoom.addEventListener('click', colorizeDay);
 function colorizeDay (event) {
-  if (taskSelected.className === 'task selected') {
+  if (taskSelected.className === 'task selected' && event.target.style.color !== 'green') {
     event.target.style.color = 'green';
-  } else {
+  } else if (taskSelected.className === 'task selected' && event.target.style.color === 'green') {
     event.target.style.color = '#777';
   }
 }
