@@ -13,10 +13,10 @@
   </header>
   <form action="" method="get" enctype="multipart/form-data">
     <label for="name-surname">Nome Completo:
-      <input type="text" name="nome" id="name-surname" maxlength="40" minlength="10" placeholder="Nome Sobrenome" required>
+      <input type="text" name="nome" id="name-surname" class="has-maxlength" maxlength="40" minlength="10" placeholder="Nome Sobrenome" required>
     </label>
     <label for="email">E-mail:
-      <input type="email" name="email" id="email" maxlength="50" minlength="10" placeholder="Seu e-mail" required>
+      <input type="email" name="email" id="email" class="has-maxlength" maxlength="50" minlength="10" placeholder="Seu e-mail" required>
     </label>
     <label for="">Destino Preferido:
       <select name="destiny" id="prefered-destiny">
@@ -27,7 +27,7 @@
       </select>
     </label>
     <p>Por que você deveria ser a pessoa ganhadora</p>
-    <textarea name="why-win" id="why-text" cols="35" rows="10" maxlength="500"></textarea>
+    <textarea name="why-win" id="why-text" class="has-maxlength" cols="35" rows="10" maxlength="500"></textarea>
     <label for="travel-date">Qual a melhor data?
       <input type="date" name="best-date" id="travel-date">
     </label>
