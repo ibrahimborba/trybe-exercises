@@ -143,6 +143,8 @@ selectTask();
 
 // 10 - Adiciona cor no dia do mês clicado
 let taskSelected = document.getElementsByClassName('task')[0];
+let taskSelectedColor = taskSelected.style.backgroundColor;
+
 daysZoom.addEventListener('click', colorizeDay);
 function colorizeDay (event) {
   if (taskSelected.className === 'task selected' && event.target.style.color !== 'green') {
@@ -151,4 +153,6 @@ function colorizeDay (event) {
     event.target.style.color = '#777';
   }
 }
+
+// Bonus - 
 
