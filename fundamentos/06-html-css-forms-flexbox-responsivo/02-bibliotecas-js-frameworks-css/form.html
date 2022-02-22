@@ -14,14 +14,14 @@
     <h1>TRYBE TRIP</h1>
   </header>
   <main class="container">
-    <form action="" method="get" enctype="multipart/form-data">
+    <form id="form" action="" method="get" enctype="multipart/form-data">
       <div class="form-group">
         <label for="name-surname">Nome Completo:</label>
-        <input type="text" name="nome" id="name-surname" class="form-control" maxlength="40" minlength="10" placeholder="Nome Sobrenome" required>
+        <input type="text" name="nome" id="name-surname" class="form-control" placeholder="Nome Sobrenome">
       </div>
       <div class="form-group">
         <label for="email">E-mail:</label>
-        <input type="email" name="email" id="email" class="form-control" maxlength="50" minlength="10" placeholder="Exemplo@email.com" required>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Exemplo@email.com">
       </div>
       <div class="form-group">
         <label for="">Destino Preferido:</label>
@@ -34,7 +34,7 @@
       </div>
       <div class="form-group">
         <p>Por que você deveria ser a pessoa ganhadora</p>
-      <textarea name="why-win" id="why-text" class="form-control" cols="35" rows="10" maxlength="500"></textarea>
+      <textarea name="why-win" id="why-text" class="form-control" cols="35" rows="10"></textarea>
       </div>
       <div class="form-group">
         <label for="travel-date">Qual a melhor data?
@@ -60,6 +60,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="./node_modules/moment/moment.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
