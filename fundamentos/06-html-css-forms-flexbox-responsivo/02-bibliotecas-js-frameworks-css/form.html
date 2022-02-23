@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+  <title>Trybe Trip Form</title>
+</head>
+<body>
+  <header class="container">
+    <h1>TRYBE TRIP</h1>
+  </header>
+  <main class="container">
+    <form id="form" action="" method="get" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name-surname">Nome Completo:</label>
+        <input type="text" name="nome" id="name-surname" class="form-control" placeholder="Nome Sobrenome">
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Exemplo@email.com">
+      </div>
+      <div class="form-group">
+        <label for="">Destino Preferido:</label>
+        <select name="destiny" id="prefered-destiny" class="custom-select">
+          <option value="city" selected>Cidade</option>
+          <option value="city">Campo</option>
+          <option value="city">Praia</option>
+          <option value="city">Montanha</option>
+        </select>        
+      </div>
+      <div class="form-group">
+        <p>Por que você deveria ser a pessoa ganhadora</p>
+      <textarea name="why-win" id="why-text" class="form-control" cols="35" rows="10"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="travel-date">Qual a melhor data?
+          <input type="text" name="best-date" id="travel-date" class="form-control">
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="newsletter" id="check-newsletter">
+        <label class="form-check-label" for="check-newsletter">Gostaria de receber outras oportunidades!</label>
+        <input class="form-check-input" type="checkbox" name="agreement" id="info-agreement">
+        <label class="form-check-label" for="info-agreement">Concordo que minhas imagens de férias poderão ser usadas</label>
+      </div>
+      <div class="form-group">
+        <button type="submit" id="send-form" class="btn btn-primary" value="submit">Enviar Formulário</button>
+        <button type="reset" id="reset-form" class="btn btn-warning" value="reset">Limpar Formulário</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./node_modules/moment/moment.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
