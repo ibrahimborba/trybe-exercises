@@ -64,3 +64,26 @@ figcaption {
     width: 40%;
   }
 }
+
+@media screen and (min-width:1280px) {
+  body {
+    max-width: 600px;
+    background-color: whitesmoke;
+    font-size: 32px;
+    margin: 80px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  section {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+  }
+
+  figure {
+    width: 40%;
+  }
+}
