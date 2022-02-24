@@ -40,3 +40,29 @@ footer {
   align-items: center;
   text-align: center;
 }
+
+@media screen and (min-width: 420px) {
+  body {
+    margin: 40px;
+  }
+
+  header p {
+    text-align: center;
+  }
+
+  header ul {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    list-style: none;
+    background-color: grey;
+  }
+
+  li {
+    margin: 10px;
+  }
+
+  .main-content {
+    max-width: 600px;
+  }
+}
