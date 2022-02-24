@@ -88,3 +88,36 @@ body {
     width: 90%;
   }
 }
+
+@media screen and (max-width: 420px) {
+  #aside {
+    display: none;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #navigation li a {
+    border: none;
+  }
+
+  #header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+  }
+  
+  #navigation {
+    margin-top: 75px;
+  }
+}
