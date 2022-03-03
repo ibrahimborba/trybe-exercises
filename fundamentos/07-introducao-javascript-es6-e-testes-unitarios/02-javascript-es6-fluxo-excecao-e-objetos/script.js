@@ -1,5 +1,4 @@
-// Requisito 1 - verifica se os valores dos inputs são válidos
-
+// Requisito 1 - verifica se os valores dos inputs estão preenchidos e se são números
 const verifyInputs = (input1, input2) => {
   if (input1 === '' || input2 === '') {
     throw new Error('Preencha os dois campos com números');
