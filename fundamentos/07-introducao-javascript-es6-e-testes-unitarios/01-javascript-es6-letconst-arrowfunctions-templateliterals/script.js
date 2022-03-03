@@ -39,3 +39,17 @@ const returnLongestWord = (string) => {
 }
 const phrase = 'Antônio foi no banheiro e não sabemos o que aconteceu';
 console.log(returnLongestWord(phrase));
+
+
+// Requisito 3 - Conta número de cliques do botão
+const btnClick = document.getElementById('btn-click');
+const counterText = document.getElementById('click-counter');
+
+function clickCounter() {
+  let clickCount = 0;
+  btnClick.addEventListener('click', (event) => {
+    event.detail >= 1 ? clickCount += 1 : clickCount;
+    counterText.innerText = `Cliques: ${clickCount}`;
+  });
+}
+clickCounter();
