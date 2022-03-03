@@ -34,7 +34,7 @@ console.log(calcFactorial(6));
 // Requisito 2 - recebe uma frase e retorna qual a maior palavra
 const returnLongestWord = (string) => {
   let longestWord = '';
-  string.split(" ").map((word) => (word.length > longestWord.length ? longestWord = word : longestWord));
+  string.split(' ').map((word) => (word.length > longestWord.length ? longestWord = word : longestWord));
   return longestWord;
 }
 const phrase = 'Antônio foi no banheiro e não sabemos o que aconteceu';
@@ -42,7 +42,7 @@ console.log(returnLongestWord(phrase));
 
 
 // Requisito 3 - Conta número de cliques do botão
-const btnClick = document.getElementById('btn-click');
+/* const btnClick = document.getElementById('btn-click');
 const counterText = document.getElementById('click-counter');
 
 function clickCounter() {
@@ -52,4 +52,15 @@ function clickCounter() {
     counterText.innerText = `Cliques: ${clickCount}`;
   });
 }
-clickCounter();
+clickCounter(); */
+
+// Requisito 4
+// Função 1 - recebe uma frase e substitui o 'x' por uma palavra
+const substituteX = (string, newWord) => {
+  let stringArray = string.split(' ').map(word => (word === 'x' ? word = newWord : word));
+  return stringArray.join(' ');
+}
+const stringX = 'Tryber x aqui!';
+const xSubstitute = 'Bebeto';
+const arraySkills = ['html', 'css', 'javascript', 'bootstrap', 'flexbox'];
+console.log(substituteX(stringX, xSubstitute), arraySkills);
