@@ -63,4 +63,12 @@ const substituteX = (string, newWord) => {
 const stringX = 'Tryber x aqui!';
 const xSubstitute = 'Bebeto';
 const arraySkills = ['html', 'css', 'javascript', 'bootstrap', 'flexbox'];
-console.log(substituteX(stringX, xSubstitute), arraySkills);
+console.log(substituteX(stringX, xSubstitute));
+
+// Função 2 
+const concatStrArray = (string, array) => {
+  let stringSorted = array.sort().join(' \n- ');
+  return `${string} Minhas cinco principais habilidades são:
+- ${stringSorted}`;
+}
+console.log(concatStrArray(substituteX(stringX, xSubstitute), arraySkills));
