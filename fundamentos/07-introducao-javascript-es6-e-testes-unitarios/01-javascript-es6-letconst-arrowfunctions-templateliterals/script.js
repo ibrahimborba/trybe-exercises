@@ -29,3 +29,13 @@ const calcFactorial = (number) => {
   return factorial < 1 ? `1` : `${number *= calcFactorial(factorial)}`;
 }
 console.log(calcFactorial(6));
+
+
+// Requisito 2 - recebe uma frase e retorna qual a maior palavra
+const returnLongestWord = (string) => {
+  let longestWord = '';
+  string.split(" ").map((word) => (word.length > longestWord.length ? longestWord = word : longestWord));
+  return longestWord;
+}
+const phrase = 'Antônio foi no banheiro e não sabemos o que aconteceu';
+console.log(returnLongestWord(phrase));
