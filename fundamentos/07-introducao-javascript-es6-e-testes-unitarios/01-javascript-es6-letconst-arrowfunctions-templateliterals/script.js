@@ -65,7 +65,7 @@ const xSubstitute = 'Bebeto';
 const arraySkills = ['html', 'css', 'javascript', 'bootstrap', 'flexbox'];
 console.log(substituteX(stringX, xSubstitute));
 
-// Função 2 
+// Função 2 - recebe a string da Função 1 e concatena com o array global
 const concatStrArray = (string, array) => {
   let stringSorted = array.sort().join(' \n- ');
   return `${string} Minhas cinco principais habilidades são:
