@@ -105,9 +105,15 @@ const lesson3 = {
 };
 
 // Requisito 1 - adiciona o turno da noite na lesson2
-function addShift(object, key, keyValue) {
+function addProperty(object, key, keyValue) {
   const newObject = {};
   newObject[key] = keyValue;
   Object.assign(object, newObject);
 }
-addShift(lesson2, 'turno', 'noite');
+addProperty(lesson2, 'turno', 'noite');
+
+// Requisito 2 - lista as keys de um objeto
+function listObjectKeys(object) {
+  return Object.keys(object);
+}
+console.log(listObjectKeys(lesson2));
