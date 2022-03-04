@@ -123,3 +123,9 @@ function objectLength(object) {
   return Object.keys(object).length;
 }
 console.log(objectLength(lesson2));
+
+// Requisito 4 - lista os valores de um objeto
+function listObjectValues(object) {
+  return Object.values(object);
+}
+console.log(listObjectValues(lesson2));
