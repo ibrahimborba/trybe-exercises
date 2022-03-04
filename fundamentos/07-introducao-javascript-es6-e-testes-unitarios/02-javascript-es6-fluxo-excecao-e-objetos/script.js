@@ -146,3 +146,9 @@ function totalStudents() {
   return studentCount;
 }
 console.log(totalStudents());
+
+// Requisito 7 - obtem o valor da chave de acordo com a sua posição no objeto
+function getValueByNumber(object, index) {
+  return listObjectValues(object)[index];
+}
+console.log(getValueByNumber(lesson1, 0));
