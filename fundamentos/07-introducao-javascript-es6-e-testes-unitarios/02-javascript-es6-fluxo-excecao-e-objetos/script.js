@@ -183,3 +183,21 @@ function mathStudents() {
   return studentCount;
 }
 console.log(mathStudents());
+
+// Requisito 2 - retorna relatório sobre professor
+function createReport(object, name) {
+  const arrayValues = Object.values(object);
+  const report = {professor: name};
+  let studentCount = 0;
+  let classes = [];
+  for (let i in arrayValues) {
+    if (Object.values(arrayValues[i]).includes(name)) {
+      studentCount += arrayValues[i]['numeroEstudantes'];
+      classes.push(arrayValues[i]['materia']);
+    }
+  }
+  report['aulas'] = classes;
+  report['estudantes'] = studentCount;
+  return report;  
+}
+console.log(createReport(allLessons, 'Maria Clara'));
