@@ -117,3 +117,9 @@ function listObjectKeys(object) {
   return Object.keys(object);
 }
 console.log(listObjectKeys(lesson2));
+
+// Requisito 3 - mostra o tamanho de um objeto
+function objectLength(object) {
+  return Object.keys(object).length;
+}
+console.log(objectLength(lesson2));
