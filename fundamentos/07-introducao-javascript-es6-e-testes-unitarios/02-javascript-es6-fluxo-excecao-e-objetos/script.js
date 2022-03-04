@@ -152,3 +152,20 @@ function getValueByNumber(object, index) {
   return listObjectValues(object)[index];
 }
 console.log(getValueByNumber(lesson1, 0));
+
+// Requisito 8 -  verifica se o par (chave / valor) existe na função
+function verifyPair(object, key, keyValue) {
+  for (let i in listObjectKeys(object)) {
+    if(listObjectKeys(object)[i].includes(key) === true
+    && listObjectValues(object)[i].includes(keyValue) === true) {
+    return true;
+    }
+  }
+  return false;
+}
+
+/* const verifyPair = (object, key, keyValue) => (listObjectKeys(object).includes(key) === true
+&& listObjectValues(object).includes(keyValue) === true ? true : false); */
+
+console.log(verifyPair(lesson3, 'turno', 'noite'));
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
