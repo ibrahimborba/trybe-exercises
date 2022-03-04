@@ -9,7 +9,7 @@ const verifyInputs = (input1, input2) => {
 }
 
 // Requisito 3 - adiciona <finally> para resetar os inputs
-/* function sum() {
+function sum() {
   const value1 = document.getElementById('value1').value;
   const value2 = document.getElementById('value2').value;
   try {
@@ -27,7 +27,7 @@ const verifyInputs = (input1, input2) => {
 window.onload = () => {
   const button = document.getElementById('button');
   button.addEventListener('click', sum);
-} */
+}
 
 // PARTE 2
 const order = {
@@ -81,7 +81,6 @@ const orderModifier = (order) => {
 }
 
 orderModifier(order);
-
 
 // PARTE 3
 const lesson1 = {
@@ -164,12 +163,8 @@ function verifyPair(object, key, keyValue) {
   return false;
 }
 
-/* const verifyPair = (object, key, keyValue) => (listObjectKeys(object).includes(key) === true
-&& listObjectValues(object).includes(keyValue) === true ? true : false); */
-
 console.log(verifyPair(lesson3, 'turno', 'noite'));
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
-
 
 // BÔNUS
 // Requisito 1 - retorna numero total de estudantes
