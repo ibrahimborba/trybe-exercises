@@ -169,3 +169,17 @@ function verifyPair(object, key, keyValue) {
 
 console.log(verifyPair(lesson3, 'turno', 'noite'));
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+
+
+// BÔNUS
+// Requisito 1 - retorna numero total de estudantes
+function mathStudents() {
+  let studentCount = 0;
+  for (let i in allLessons) {
+    if (allLessons[i]['materia'] === 'Matemática') {
+      studentCount += allLessons[i]['numeroEstudantes'];
+    }
+  }
+  return studentCount;
+}
+console.log(mathStudents());
