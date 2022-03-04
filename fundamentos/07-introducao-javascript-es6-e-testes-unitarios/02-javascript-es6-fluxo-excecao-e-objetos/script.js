@@ -81,3 +81,33 @@ const orderModifier = (order) => {
 }
 
 orderModifier(order);
+
+
+// PARTE 3
+const lesson1 = {
+  materia: 'Matemática',
+  numeroEstudantes: 20,
+  professor: 'Maria Clara',
+  turno: 'manhã',
+};
+
+const lesson2 = {
+  materia: 'História',
+  numeroEstudantes: 20,
+  professor: 'Carlos',
+};
+
+const lesson3 = {
+  materia: 'Matemática',
+  numeroEstudantes: 10,
+  professor: 'Maria Clara',
+  turno: 'noite',
+};
+
+// Requisito 1 - adiciona o turno da noite na lesson2
+function addShift(object, key, keyValue) {
+  const newObject = {};
+  newObject[key] = keyValue;
+  Object.assign(object, newObject);
+}
+addShift(lesson2, 'turno', 'noite');
