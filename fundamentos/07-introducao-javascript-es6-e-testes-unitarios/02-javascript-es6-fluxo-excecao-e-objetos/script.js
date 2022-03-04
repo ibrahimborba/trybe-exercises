@@ -136,3 +136,13 @@ Object.assign(allLessons['lesson1'], lesson1);
 Object.assign(allLessons['lesson2'], lesson2);
 Object.assign(allLessons['lesson3'], lesson3);
 console.log(allLessons);
+
+// Requisito 6 - retorna numero total de estudantes
+function totalStudents() {
+  let studentCount = 0;
+  for (let i in allLessons) {
+    studentCount += allLessons[i]['numeroEstudantes'];
+  }
+  return studentCount;
+}
+console.log(totalStudents());
