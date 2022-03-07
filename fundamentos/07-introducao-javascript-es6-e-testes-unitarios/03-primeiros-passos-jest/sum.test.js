@@ -1,11 +1,11 @@
 const sum = require('./sum')
 
-describe ('checa se a função sum', () => {
+describe ('Checa se a função sum', () => {
   it('retorna 9', () => {
     expect(sum(4, 5)).toEqual(9);
   });
 
-  it('retorna 9', () => {
+  it('retorna 0', () => {
     expect(sum(0, 0)).toEqual(0);
   });
 
