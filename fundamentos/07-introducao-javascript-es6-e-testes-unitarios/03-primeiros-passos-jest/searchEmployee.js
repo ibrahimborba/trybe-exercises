@@ -39,6 +39,12 @@ const professionalBoard = [
 ];
 
 // Pesquisa
+const verifyId = (id, object) => {
+  if (Object.keys(object).includes(id) === false) {
+    throw new Error('ID não identificada');
+  }
+};
+
 const searchEmployee = (id, detail) => {
   // Implemente seu código aqui
   for (let i in professionalBoard) {
@@ -48,6 +54,7 @@ const searchEmployee = (id, detail) => {
   }
 };
 
-console.log(searchEmployee('8579-6', 'firstName'));
+
+console.log(searchEmployee('0000-0', 'firstName'));
 
 module.exports = searchEmployee;
