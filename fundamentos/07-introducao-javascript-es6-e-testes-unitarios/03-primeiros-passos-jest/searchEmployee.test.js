@@ -5,9 +5,5 @@ it('TDD first test', () => {
 });
 
 it('Return error if id is not found', () => {
-  expect(() => {searchEmployee('0000-0', 'firstName')}).toThrow();
-});
-
-it('Return error message if id is not found', () => {
-  expect(() => {searchEmployee('0000-0', 'firstName')}).toThrowError(new Error('ID não identificada'));
+  expect(() => {searchEmployee('0000-0', 'firstName')}).toThrow('ID não identificada');
 });

@@ -38,15 +38,21 @@ const professionalBoard = [
   },
 ];
 
-// Pesquisa
-const verifyId = (id, object) => {
-  if (Object.keys(object).includes(id) === false) {
+// Verifica se o ID passado existe no quadro de funcionários
+const verifyID = (id) => {
+  const arrayID = [];
+  for (let i in professionalBoard) {
+    arrayID.push(professionalBoard[i].id);
+  }
+  if (arrayID.includes(id) === false) {
     throw new Error('ID não identificada');
   }
 };
 
+// Pesquisa
 const searchEmployee = (id, detail) => {
   // Implemente seu código aqui
+  verifyID(id);
   for (let i in professionalBoard) {
     if (professionalBoard[i]['id'] === id) {
       return professionalBoard[i][detail];
@@ -54,7 +60,15 @@ const searchEmployee = (id, detail) => {
   }
 };
 
+const showDetails = (id, detail) => {
+  try {
+    const detailInfo = searchEmployee(id, detail);
+    return `O ${detail} desse funcionário é: ${detailInfo}`;
+  } catch(error) {
+    return error.message;
+  }
+};
 
-console.log(searchEmployee('0000-0', 'firstName'));
+console.log(showDetails('9852-2-2', 'firstName'));
 
 module.exports = searchEmployee;
