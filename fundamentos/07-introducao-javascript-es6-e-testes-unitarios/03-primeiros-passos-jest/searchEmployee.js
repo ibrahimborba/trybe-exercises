@@ -41,6 +41,13 @@ const professionalBoard = [
 // Pesquisa
 const searchEmployee = (id, detail) => {
   // Implemente seu código aqui
+  for (let i in professionalBoard) {
+    if (professionalBoard[i]['id'] === id) {
+      return professionalBoard[i][detail];
+    }
+  }
 };
+
+console.log(searchEmployee('8579-6', 'firstName'));
 
 module.exports = searchEmployee;
