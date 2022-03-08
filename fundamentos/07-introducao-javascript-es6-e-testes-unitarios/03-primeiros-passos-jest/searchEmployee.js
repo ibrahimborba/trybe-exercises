@@ -49,10 +49,19 @@ const verifyID = (id) => {
   }
 };
 
-// Pesquisa
+// Verifica se o detail passado existe no quadro de funcionários
+const verifyDetail = (detail) => {
+  const arrayDetail = Object.keys(professionalBoard[0]);
+  if (arrayDetail.includes(detail) === false) {
+    throw new Error('Informação indisponível');
+  }
+};
+
+// Pesquisa pelo funcionário conforme o ID
 const searchEmployee = (id, detail) => {
   // Implemente seu código aqui
   verifyID(id);
+  verifyDetail(detail);
   for (let i in professionalBoard) {
     if (professionalBoard[i]['id'] === id) {
       return professionalBoard[i][detail];
@@ -60,6 +69,7 @@ const searchEmployee = (id, detail) => {
   }
 };
 
+// Mostra o detalhe solicitado conforme o ID passado e retorna uma mensagem de erro se um dos parâmetros não está disponível no quadro de funcionários
 const showDetails = (id, detail) => {
   try {
     const detailInfo = searchEmployee(id, detail);
