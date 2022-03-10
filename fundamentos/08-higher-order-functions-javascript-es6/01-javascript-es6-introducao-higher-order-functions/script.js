@@ -12,7 +12,6 @@ const newEmployees = (callback) => {
   }
   return employees;
 };
-
 console.log(newEmployees(createEmail));
 
 // REQUISITO 2 - retorna resultado de um sorteio
@@ -29,22 +28,28 @@ console.log(gameResult(5, gameNumber));
 const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
 const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
 
-const answerChecker = (rightAnswers, studentAnswers) => {
-  let answerCounter = 0;
-  for (let i in studentAnswers) {
-    if (studentAnswers[i] === rightAnswers[i]) {
-      answerCounter += 1;
-    } else if (studentAnswers[i] === 'N.A') {
-      answerCounter;
-    } else {
-      answerCounter -= 0.5;
-    }
+const answerChecker = (rightAnswer, studentAnswer) => {
+  if (studentAnswer === rightAnswer) {
+    return 'Certo';
+  } else if (studentAnswer === 'N.A') {
+    return 'Nulo';
+  } else {
+    return 'Errado';
   }
-  return answerCounter;
 }
 
-const answersCount = (rightAnswers, studentAnswers, callback) => {
-  return callback(rightAnswers, studentAnswers);
-};
+const answersCounter = (rightAnswers, studentAnswers, callback) => {
+  let answerCount = 0;
+  for (let i in studentAnswers) {
+    if (callback(rightAnswers[i], studentAnswers[i]) === 'Certo') {
+      answerCount += 1;
+    } else if (callback(rightAnswers[i], studentAnswers[i]) === 'Nulo') {
+      answerCount;
+    } else {
+      answerCount -= 0.5;
+    }
+  }
+  return answerCount;
+}
 
-console.log(answersCount(RIGHT_ANSWERS, STUDENT_ANSWERS, answerChecker));
+console.log(answersCounter(RIGHT_ANSWERS, STUDENT_ANSWERS, answerChecker));
