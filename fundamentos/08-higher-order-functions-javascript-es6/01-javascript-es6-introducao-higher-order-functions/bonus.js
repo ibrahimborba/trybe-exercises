@@ -1,4 +1,3 @@
-// PARTE 1
 const mage = {
   healthPoints: 130,
   intelligence: 45,
@@ -21,6 +20,7 @@ const dragon = {
 
 const battleMembers = { mage, warrior, dragon };
 
+// PARTE 1
 // Requisito 1 - retorna dano do dragão
 const dragonDamage = (strength) => {
   return Math.floor(Math.random() * (strength - 14)) + 15;
@@ -45,3 +45,8 @@ const mageDamage = (intelligence, mana) => {
   damageAndMana.mana = newMana;
   return damageAndMana;
 }
+
+// PARTE 2
+const gameActions = {
+  // Crie as HOFs neste objeto.
+};
