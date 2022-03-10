@@ -14,3 +14,13 @@ const newEmployees = (callback) => {
 };
 
 console.log(newEmployees(createEmail));
+
+// REQUISITO 2 - retorna resultado de um sorteio
+const gameNumber = () => {
+  return Math.floor(Math.random() * 5) + 1;
+}
+
+const gameResult = (bet, callback) => (
+  bet === callback() ? 'Parabéns você ganhou' : 'Tente novamente'
+);
+console.log(gameResult(5, gameNumber));
