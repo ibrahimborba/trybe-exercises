@@ -62,6 +62,10 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-function authorBornIn1947() {
+const birthYear1947 = (object) => object.author.birthYear === 1947;
+
+function authorBornIn1947(array) {
   // escreva aqui o seu código
+  return array.find(birthYear1947).author.name;
 }
+console.log(authorBornIn1947(books));
