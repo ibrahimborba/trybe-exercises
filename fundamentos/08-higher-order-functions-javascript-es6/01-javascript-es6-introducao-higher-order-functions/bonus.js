@@ -62,10 +62,19 @@ const mageTurnResults = (mage, callback) => {
   mage.mana = result.mana;
 }
 
+// Requisito 3 - calcula o turno do dragon
+const dragonTurnResults = (dragon, callback) => {
+  const result = callback(dragon);
+  warrior.healthPoints -= result;
+  mage.healthPoints -= result;
+  dragon.damage = result;
+}
+
 const gameActions = {
   // Crie as HOFs neste objeto.
   warriorTurn: warriorTurnResults,
   mageTurn: mageTurnResults,
+  dragonTurn: dragonTurnResults,
 };
 
-console.log(dragon, mage);
+console.log(dragon, mage, warrior);
