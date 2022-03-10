@@ -23,10 +23,25 @@ const battleMembers = { mage, warrior, dragon };
 
 // Requisito 1 - retorna dano do dragão
 const dragonDamage = (strength) => {
-  Math.floor(Math.random() * (strength - 14)) + 15;
+  return Math.floor(Math.random() * (strength - 14)) + 15;
 }
 
 // Requisito 2 - retorna dano do warrior
-const dragonDamage = (strength) => {
-  Math.floor(Math.random() * (strength * weaponDmg - strength + 1)) + strength;
+const warriorDamage = (strength) => {
+  return Math.floor(Math.random() * (strength * weaponDmg - strength + 1)) + strength;
+}
+
+// Requisito 3 - retorna dano do warrior
+const mageDamage = (intelligence, mana) => {
+  let newMana = mana;
+  if (newMana < 15) {
+    newMana;
+    return 'Não possui mana suficiente';
+  } else {
+    newMana -= 15;
+  }
+  const damageAndMana = {};
+  damageAndMana.damage = Math.floor(Math.random() * (intelligence * 2 - intelligence + 1)) + intelligence;
+  damageAndMana.mana = newMana;
+  return damageAndMana;
 }
