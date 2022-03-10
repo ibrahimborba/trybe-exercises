@@ -70,7 +70,7 @@ const createBirthsArray = (booksArray) => {
 
 function authorUnique(booksArray) {
   // escreva seu código aqui
-  let result = createBirthsArray(booksArray).some((element, index, array) => {return array.indexOf(element) !== index});
+  let result = createBirthsArray(booksArray).some((element, index, array) => array.indexOf(element) !== index);
   return result === true ? false : true ;
 }
 
