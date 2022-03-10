@@ -18,9 +18,33 @@ console.log(newEmployees(createEmail));
 // REQUISITO 2 - retorna resultado de um sorteio
 const gameNumber = () => {
   return Math.floor(Math.random() * 5) + 1;
-}
+};
 
 const gameResult = (bet, callback) => (
   bet === callback() ? 'Parabéns você ganhou' : 'Tente novamente'
 );
 console.log(gameResult(5, gameNumber));
+
+// REQUISITO 3 - retorna resultado de um sorteio
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const answerChecker = (rightAnswers, studentAnswers) => {
+  let answerCounter = 0;
+  for (let i in studentAnswers) {
+    if (studentAnswers[i] === rightAnswers[i]) {
+      answerCounter += 1;
+    } else if (studentAnswers[i] === 'N.A') {
+      answerCounter;
+    } else {
+      answerCounter -= 0.5;
+    }
+  }
+  return answerCounter;
+}
+
+const answersCount = (rightAnswers, studentAnswers, callback) => {
+  return callback(rightAnswers, studentAnswers);
+};
+
+console.log(answersCount(RIGHT_ANSWERS, STUDENT_ANSWERS, answerChecker));
