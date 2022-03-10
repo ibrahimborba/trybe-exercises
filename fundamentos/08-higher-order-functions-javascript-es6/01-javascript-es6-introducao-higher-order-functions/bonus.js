@@ -70,11 +70,22 @@ const dragonTurnResults = (dragon, callback) => {
   dragon.damage = result;
 }
 
+// Requisito 4 - mostra o resultado final do turno
+const finalResults = (warrior, mage, dragon) => {
+  const battleMembers = {
+    warrior: warrior,
+    mage: mage,
+    dragon: dragon
+  }
+  return battleMembers;
+}
+
 const gameActions = {
   // Crie as HOFs neste objeto.
   warriorTurn: warriorTurnResults,
   mageTurn: mageTurnResults,
   dragonTurn: dragonTurnResults,
+  turnResults: finalResults,
 };
 
-console.log(dragon, mage, warrior);
+console.log(finalResults(warrior, mage, dragon));
