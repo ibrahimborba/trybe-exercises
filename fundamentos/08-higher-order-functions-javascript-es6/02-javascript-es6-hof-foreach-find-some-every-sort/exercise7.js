@@ -61,11 +61,17 @@ const books = [
   },
 ];
 
-const nameChar26 = (bookInfo) => bookInfo.name.length === 26;
-
-function getNamedBook(booksArray) {
-  // escreva seu código aqui
-  // Source: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Object/fromEntries
-  return Object.fromEntries(Object.entries(booksArray.find(nameChar26)).sort());
+// Adicione o código do exercício aqui:
+const createBirthsArray = (booksArray) => {
+  const birthYears = [];
+  booksArray.forEach(element => birthYears.push(element.author.birthYear));
+  return birthYears;
 }
-console.log(getNamedBook(books));
+
+function authorUnique(booksArray) {
+  // escreva seu código aqui
+  let result = createBirthsArray(booksArray).some((element, index, array) => {return array.indexOf(element) !== index});
+  return result === true ? false : true ;
+}
+
+console.log(authorUnique(books));
