@@ -47,15 +47,25 @@ const mageDamage = (stats) => {
 }
 
 // PARTE 2
-const warriorTurn = (warrior, callback) => {
-  const damage = callback(warrior);
-  dragon.healthPoints -= damage;
-  warrior.damage = damage;
+// Requisito 1 - calcula o turno do warrior
+const warriorTurnResults = (warrior, callback) => {
+  const result = callback(warrior);
+  dragon.healthPoints -= result;
+  warrior.damage = result;
+}
+
+// Requisito 2 - calcula o turno do mage
+const mageTurnResults = (mage, callback) => {
+  const result = callback(mage);
+  dragon.healthPoints -= result.damage;
+  mage.damage = result.damage;
+  mage.mana = result.mana;
 }
 
 const gameActions = {
   // Crie as HOFs neste objeto.
-  warriorTurn: warriorTurn,
+  warriorTurn: warriorTurnResults,
+  mageTurn: mageTurnResults,
 };
 
-console.log(dragon, warrior);
+console.log(dragon, mage);
