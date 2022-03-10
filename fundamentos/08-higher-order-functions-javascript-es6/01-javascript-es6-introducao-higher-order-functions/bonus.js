@@ -22,18 +22,18 @@ const battleMembers = { mage, warrior, dragon };
 
 // PARTE 1
 // Requisito 1 - retorna dano do dragão
-const dragonDamage = (strength) => {
-  return Math.floor(Math.random() * (strength - 14)) + 15;
+const dragonDamage = (stats) => {
+  return Math.floor(Math.random() * (stats.strength - 14)) + 15;
 }
 
 // Requisito 2 - retorna dano do warrior
-const warriorDamage = (strength) => {
-  return Math.floor(Math.random() * (strength * weaponDmg - strength + 1)) + strength;
+const warriorDamage = (stats) => {
+  return Math.floor(Math.random() * (stats.strength * stats.weaponDmg - stats.strength + 1)) + stats.strength;
 }
 
 // Requisito 3 - retorna dano do warrior
-const mageDamage = (intelligence, mana) => {
-  let newMana = mana;
+const mageDamage = (stats) => {
+  let newMana = stats.mana;
   if (newMana < 15) {
     newMana;
     return 'Não possui mana suficiente';
@@ -41,12 +41,21 @@ const mageDamage = (intelligence, mana) => {
     newMana -= 15;
   }
   const damageAndMana = {};
-  damageAndMana.damage = Math.floor(Math.random() * (intelligence * 2 - intelligence + 1)) + intelligence;
+  damageAndMana.damage = Math.floor(Math.random() * (stats.intelligence * 2 - stats.intelligence + 1)) + stats.intelligence;
   damageAndMana.mana = newMana;
   return damageAndMana;
 }
 
 // PARTE 2
+const warriorTurn = (warrior, callback) => {
+  const damage = callback(warrior);
+  dragon.healthPoints -= damage;
+  warrior.damage = damage;
+}
+
 const gameActions = {
   // Crie as HOFs neste objeto.
+  warriorTurn: warriorTurn,
 };
+
+console.log(dragon, warrior);
