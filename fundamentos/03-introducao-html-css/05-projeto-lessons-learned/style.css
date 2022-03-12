@@ -1,0 +1,125 @@
+body {
+  background-color: rgb(253, 251, 251);
+  font-size: 14px;
+  color: rgb(33, 33, 33);
+  line-height: 1.8;
+  font-family: Noto Sans, sans-serif;
+}
+
+.blue-style {
+  font-weight: 700;
+  font-size: 1.2em;
+  font-family: Georgia, Times New Roman, Times, serif;
+  color: rgb(0, 94, 255);
+}
+
+#cabecalho {
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 160, 0);
+  color: rgb(33, 33, 33);
+  z-index: 99;
+}
+
+#titulo {
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 120px;
+  font-size: 24px;
+  letter-spacing: 3px;
+}
+
+#navigation {
+  float: right;
+  margin-top: 14px;
+  margin-right: 200px;
+}
+
+.aside-content a {
+  text-decoration: none;
+  font-weight: 700;
+  color: rgb(33, 33, 33);
+}
+
+.aside-content a:hover {
+  border-bottom: 3px solid rgb(0, 94, 255);
+  transition: 0.2s;
+}
+
+#navigation a {
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  color: rgb(33, 33, 33);
+}
+
+#navigation a:hover {
+  border-bottom: 3px solid rgb(0, 94, 255);
+  color: rgb(253, 251, 251);
+  transition: 0.2s;
+}
+
+.lado-esquerdo {
+  display: inline-block;
+  width: 50%;
+  margin-top: 80px;
+  margin-left: 100px;
+  padding: 30px;
+}
+
+.lado-esquerdo h2 {
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+.lado-direito {
+  display: inline-block;
+  width: 20%;
+  margin-top: 80px;
+  margin-left: 20px;
+  padding: 20px;
+  border: 2px solid rgb(255, 160, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#minha_foto {
+  width: 100px;
+  margin: 0;
+  border-radius: 50%;
+  filter: grayscale(100%);
+}
+
+#skills {
+  background-color: rgb(0, 94, 255);
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+#skills h2 {
+  color: rgb(253, 251, 251);
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0;
+}
+
+#aprendizados {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  width: 30%;
+  background-color: rgb(253, 251, 251);
+  font-weight: 700;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#rodape {
+  text-align: center;
+}
