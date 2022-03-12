@@ -2,7 +2,7 @@
 
 Esse bloco pertence ao módulo de `fundamentos` do curso da [Trybe](https://www.betrybe.com/). Nesse bloco aprendi sobre __DOM__, a estrutura que faz a ponte entre o __HTML__ e o __JavaScript__ e que permite interação entre os dois e como recuperar dados do __HTML__ através do __JavaScript__. O conteúdo foi passado da seguinte forma:  
 &nbsp;
-1. Como acessar dados do HTML com JavaScript através dos seletoes do DOM
+1. Como acessar dados do HTML com JavaScript através dos seletores do DOM
 
 2. Buscar, adicionar e remover elementos HTML da página via JavaScript
 
