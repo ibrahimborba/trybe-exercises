@@ -10,7 +10,7 @@ Esse bloco pertence ao módulo de `fundamentos` do curso da [Trybe](https://www.
 
 4. Manipulação de objetos, como ultilizar for/in e como ultilizar funções para organizar e estruturar o seu código
 
-5. Por fim, desenvolvi uma série de funções, aplicando todo o conhecimento aprendido, de acordo com a especificação do projeto final
+5. Para o [projeto desse bloco](https://github.com/ibrahimborba/trybe-exercises/tree/main/fundamentos/04-introducao-javascript-e-logica-programacao/05-projeto-playground-functions), desenvolvi uma série de funções, aplicando todo o conhecimento aprendido, de acordo com a especificação do projeto final
 
 &nbsp;
 
