@@ -10,7 +10,7 @@ Esse bloco pertence ao módulo de `fundamentos` do curso da [Trybe](https://www.
 
 4. Significado que cada elemento HTML carrega e sobre como isso impacta a acessibilidade da página e a interpretação do conteúdo por indexadores de pesquisa, como o Google
 
-5. Por fim, desenvolvi uma página, aplicando todo o conhecimento aprendido, de acordo com a especificação do projeto final
+5. Para o [projeto desse bloco](https://github.com/ibrahimborba/trybe-exercises/tree/main/fundamentos/03-introducao-html-css/05-projeto-lessons-learned), desenvolvi uma página, aplicando todo o conhecimento aprendido, de acordo com a especificação do projeto final
 
 &nbsp;
 
