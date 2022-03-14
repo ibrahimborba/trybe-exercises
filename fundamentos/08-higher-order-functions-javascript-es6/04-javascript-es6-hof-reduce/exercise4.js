@@ -1,15 +1,5 @@
 const books = [
   {
-    id: 1,
-    name: 'As Crônicas de Gelo e Fogo',
-    genre: 'Fantasia',
-    author: {
-      name: 'George R. R. Martin',
-      birthYear: 1948,
-    },
-    releaseYear: 1991,
-  },
-  {
     id: 2,
     name: 'O Senhor dos Anéis',
     genre: 'Fantasia',
@@ -40,6 +30,16 @@ const books = [
     releaseYear: 1965,
   },
   {
+    id: 1,
+    name: 'As Crônicas de Gelo e Fogo',
+    genre: 'Fantasia',
+    author: {
+      name: 'George R. R. Martin',
+      birthYear: 1948,
+    },
+    releaseYear: 1991,
+  },
+  {
     id: 5,
     name: 'A Coisa',
     genre: 'Terror',
@@ -62,8 +62,18 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-function reduceNames(array) {
-  // escreva seu código aqui
-  return array.reduce((acc, elem) => acc + elem.author.name + ', ', '');
+const longestName = (array) => {
+  let name = '';
+  array.forEach((elem) => {
+    name.length < elem.name.length ? name = elem.name : name;
+  })
+  return name;
 }
-console.log(reduceNames(books));
+// console.log(longestName(books));
+
+function longestNamedBook(array) {
+  // escreva seu código aqui
+  return array.find((elem) => elem.name === 
+  array.reduce((acc, elem) => acc.length < elem.name.length ? acc = elem.name : acc, ''));
+}
+console.log(longestNamedBook(books));

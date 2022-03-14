@@ -62,8 +62,6 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-const expectedResult = "George R. R. Martin, J. R. R. Tolkien, Isaac Asimov, Frank Herbert, Stephen King, H. P. Lovecraft.";
-
 function averageAge(array) {
   // escreva seu código aqui
   const sumAges = array.reduce((acc, elem) => acc + (elem.releaseYear - elem.author.birthYear), 0);
