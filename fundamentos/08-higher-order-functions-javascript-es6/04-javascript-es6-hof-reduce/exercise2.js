@@ -64,6 +64,6 @@ const books = [
 // Adicione o código do exercício aqui:
 function reduceNames(array) {
   // escreva seu código aqui
-  return array.reduce((acc, elem) => acc + elem.author.name + ', ', '');
+  return array.reduce((acc, elem) => `${acc} ${elem.author.name}, `, '');
 }
 console.log(reduceNames(books));
