@@ -62,15 +62,6 @@ const books = [
 ];
 
 // Adicione o código do exercício aqui:
-const longestName = (array) => {
-  let name = '';
-  array.forEach((elem) => {
-    name.length < elem.name.length ? name = elem.name : name;
-  })
-  return name;
-}
-// console.log(longestName(books));
-
 function longestNamedBook(array) {
   // escreva seu código aqui
   return array.find((elem) => elem.name === 
