@@ -61,8 +61,7 @@ const books = [
   },
 ];
 
-// Adicione o código do exercício aqui:
-
+// Retorna o livro com nome com mais caracteres
 // Adicione o código do exercício aqui:
 function longestNamedBook(array) {
   // escreva seu código aqui

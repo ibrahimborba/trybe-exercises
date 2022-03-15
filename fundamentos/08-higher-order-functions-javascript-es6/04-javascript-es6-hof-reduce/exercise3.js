@@ -61,6 +61,7 @@ const books = [
   },
 ];
 
+// Retorna a média de idade dos autores no ano em que lançaram seus livros
 // Adicione o código do exercício aqui:
 function averageAge(array) {
   // escreva seu código aqui

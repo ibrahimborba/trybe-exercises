@@ -61,6 +61,7 @@ const books = [
   },
 ];
 
+// Retorna os nomes dos autores na lista
 // Adicione o código do exercício aqui:
 function reduceNames(array) {
   // escreva seu código aqui
