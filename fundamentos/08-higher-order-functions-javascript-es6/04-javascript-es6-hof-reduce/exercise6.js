@@ -5,7 +5,7 @@ function studentAverage(students, grades) {
   // escreva seu código aqui
   return students.map((student, index) => ({
     name: student,
-    average: grades[index].reduce((acc, elem) => acc += elem, 0) / grades[index].length,
+    average: grades[index].reduce((acc, elem) => acc + elem, 0) / grades[index].length,
   }))
 
 }
