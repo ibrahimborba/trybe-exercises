@@ -12,7 +12,7 @@ describe('A função getPokemonDetails', () => {
       done();
     }
 
-    getPokemonDetails((pokemon) => pokemon.name === 'Ibrahim', callbackError);
+    getPokemonDetails((pokemon) => pokemon.name === 'charizard', callbackError);
   });
 
   it('retorna erro se o tipo não existe', (done) => {
