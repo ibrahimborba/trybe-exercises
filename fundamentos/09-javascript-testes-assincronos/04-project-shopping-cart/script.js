@@ -1,9 +1,11 @@
 const cartItemsList = document.querySelector('.cart__items');
 const priceTotal = document.querySelector('.total-price');
-const priceValue = document.createElement('span');
-priceValue.className = 'price-value';
-priceValue.innerText = 0.00;
-priceTotal.appendChild(priceValue);
+const cartCount = document.querySelector('.cart-counter');
+
+const countCartItems = () => {
+  const cartItem = document.querySelectorAll('.cart_item_li');
+  cartCount.innerText = cartItem.length;
+}
 
 const calculateTotalPrice = () => {
   let priceCounter = 0;
@@ -11,9 +13,8 @@ const calculateTotalPrice = () => {
   cartItem.forEach((item) => {
     const itemPrice = parseFloat(item.innerText.substring(item.innerText.indexOf('$') + 1));
     priceCounter += itemPrice;
-    console.log(priceCounter);
   });
-  priceValue.innerText = priceCounter;
+  priceTotal.innerHTML = `<b>Total: R$${priceCounter.toFixed(2)}`;
 };
 
 const createLoadingMessage = () => {
@@ -48,9 +49,9 @@ function createProductItemElement({ sku, name, image }) {
   section.className = 'item';
 
   section.appendChild(createCustomElement('span', 'item__sku', sku));
-  section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
-  section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
+  section.appendChild(createCustomElement('span', 'item__title', name));
+  section.appendChild(createCustomElement('button', 'item__add', 'Adicionar'));
 
   return section;
 }
@@ -61,22 +62,28 @@ function getSkuFromProductItem(item) {
 
 function cartItemClickListener(event) {
   // coloque seu código aqui
-  event.target.remove();
+  event.target.parentElement.remove();
   saveCartItems(cartItemsList.innerHTML);
   calculateTotalPrice();
+  countCartItems();
 }
 
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
-  li.className = 'cart__item';
-  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
-  li.addEventListener('click', cartItemClickListener);
+  li.className = 'cart_item_li';
+  const span = document.createElement('span');
+  span.className = 'cart__item';
+  span.innerHTML = `${name}<br><b>R$${salePrice}<b>`;
+  span.addEventListener('click', cartItemClickListener);
+  const hr = document.createElement('hr');
+  li.appendChild(span);
+  li.appendChild(hr);
   return li;
 }
 
 const addProductItem = async () => {
   const itemsSection = document.querySelector('.items');
-  const productsResponse = await fetchProducts('computador');
+  const productsResponse = await fetchProducts('painelsolar');
   productsResponse.results.forEach((elem) => {
     const { id: sku, title: name, thumbnail: image } = elem;
     itemsSection.appendChild(createProductItemElement({ sku, name, image }));
@@ -95,6 +102,7 @@ const addProductToCart = async () => {
     cartItemsList.appendChild(createCartItemElement({ sku, name, salePrice }));
     saveCartItems(cartItemsList.innerHTML);
     calculateTotalPrice();
+    countCartItems();
   }));
 };
 addProductToCart();
@@ -104,12 +112,14 @@ const initialRenderization = () => {
   const cartItem = document.querySelectorAll('.cart__item');
   cartItem.forEach((item) => item.addEventListener('click', cartItemClickListener));
   calculateTotalPrice();
+  countCartItems();
 };
 
 const emptyCart = () => {
   cartItemsList.innerHTML = '';
   saveCartItems(cartItemsList.innerHTML);
   calculateTotalPrice();
+  countCartItems();
 };
 const btnEmptyCart = document.querySelector('.empty-cart');
 btnEmptyCart.addEventListener('click', emptyCart);
