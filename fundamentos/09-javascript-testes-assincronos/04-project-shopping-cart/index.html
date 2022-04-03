@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,20 +23,37 @@
     <header class="header">
       <nav class="nav d-flex justify-content-around">
         <div class="container-title">
-          <a class="title nav-link"><strong>trybe</strong>shopping</a>
+          <a class="title nav-link" href="#cover"><strong>trybe</strong>shopping</a>
         </div>
         <div class="dropdown">
-          <a class="material-icons-outlined nav-link" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" data-bs-target=".dropdown-menu" data-bs-auto-close="false" aria-expanded="false" style="font-size:45px;color:white">shopping_cart</a>
+          <a class="material-icons-outlined cart-symbol nav-link" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" style="font-size:45px;color:white">shopping_cart</a>
           <span class="cart-counter"></span>
           <ul class="dropdown-menu cart">
             <li><ul class="cart__items"></ul></li>
             <li class="total-price dropdown-item"></li>
-            <li><button class="empty-cart dropdown-item"><b>Esvaziar carrinho</b></button></li>
+            <li><button class="empty-cart dropdown-item" data-bs-target=".dropdown-menu"><b>Esvaziar carrinho</b></button></li>
           </ul>
         </div>        
       </nav>
     </header>
-    <section class="container">
+    <section id="cover" class="cover-container">
+      <h1 class="cover-text">Sua compra</h1>
+      <p class="cover-text">a um clique</p>
+    </section>
+    <section class="forms-container">
+      <form class="forms" action="" method="get" enctype="multipart/form-data">
+        <select class="form-select order-options" aria-label="Ordenar por">
+          <option selected>Ordenar:</option>
+          <option value="1">Maior preço</option>
+          <option value="2">Menor preço</option>
+        </select>
+        <div class="search-container">
+          <input type="text" class="form-control input-search" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="button-addon2">
+          <button class="material-icons-outlined btn btn-light btn-search" type="button" id="button-addon2">search</button>
+        </div>
+      </form>
+    </section>
+    <section class="items-container">
       <section class="items"></section>
     </section>
   </body>

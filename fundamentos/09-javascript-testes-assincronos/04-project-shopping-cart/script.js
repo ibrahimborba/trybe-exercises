@@ -1,6 +1,9 @@
 const cartItemsList = document.querySelector('.cart__items');
 const priceTotal = document.querySelector('.total-price');
 const cartCount = document.querySelector('.cart-counter');
+const searchInput = document.querySelector('.input-search');
+const searchBtn = document.querySelector('.btn-search');
+const orderOptions = document.querySelector('.order-options');
 
 const countCartItems = () => {
   const cartItem = document.querySelectorAll('.cart_item_li');
@@ -44,13 +47,14 @@ function createCustomElement(element, className, innerText) {
   return e;
 }
 
-function createProductItemElement({ sku, name, image }) {
+function createProductItemElement({ sku, name, image, price }) {
   const section = document.createElement('section');
-  section.className = 'item';
+  section.classList.add('item');
 
   section.appendChild(createCustomElement('span', 'item__sku', sku));
   section.appendChild(createProductImageElement(image));
   section.appendChild(createCustomElement('span', 'item__title', name));
+  section.appendChild(createCustomElement('span', 'item__price', price));
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar'));
 
   return section;
@@ -81,22 +85,19 @@ function createCartItemElement({ sku, name, salePrice }) {
   return li;
 }
 
-const addProductItem = async () => {
+const addProductItem = async (search) => {
   const itemsSection = document.querySelector('.items');
-  const productsResponse = await fetchProducts('painelsolar');
+  const productsResponse = await fetchProducts(search);
   productsResponse.results.forEach((elem) => {
-    const { id: sku, title: name, thumbnail: image } = elem;
-    itemsSection.appendChild(createProductItemElement({ sku, name, image }));
+    const { id: sku, title: name, thumbnail: image, price} = elem;
+    itemsSection.appendChild(createProductItemElement({ sku, name, image, price}));
   });
 };
 
 const addProductToCart = async () => {
-  createLoadingMessage();
-  await addProductItem();
-  removeLoadingMessage();
   const btnsAddToCart = document.querySelectorAll('.item__add');
   btnsAddToCart.forEach((button) => button.addEventListener('click', async (event) => {
-    const itemSKU = event.target.parentElement.firstChild.innerText;
+    const itemSKU = getSkuFromProductItem(event.target.parentElement);
     const itemResponse = await fetchItem(itemSKU);
     const { id: sku, title: name, price: salePrice } = itemResponse;
     cartItemsList.appendChild(createCartItemElement({ sku, name, salePrice }));
@@ -105,9 +106,42 @@ const addProductToCart = async () => {
     countCartItems();
   }));
 };
-addProductToCart();
 
-const initialRenderization = () => {
+const searchProducts = async () => {
+  const searchValue = searchInput.value;
+  createLoadingMessage();
+  const itemsSection = document.querySelector('.items');
+  itemsSection.innerHTML = '';
+  await addProductItem(searchValue);
+  addProductToCart();
+  removeLoadingMessage();
+}
+searchBtn.addEventListener('click', searchProducts);
+
+const orderByPrice = () => {
+  const itemListSection = document.querySelector('.items');
+  const itemList = document.querySelectorAll('.item');
+  const itemListSorted = [...itemList];
+  if (orderOptions.value === '1') {    
+    itemListSorted.sort((a, b) => {
+      return parseFloat(b.children[3].innerText) - parseFloat(a.children[3].innerText);
+    });
+  }
+  if (orderOptions.value === '2') {    
+    itemListSorted.sort((a, b) => {
+      return parseFloat(a.children[3].innerText) - parseFloat(b.children[3].innerText);
+    });
+  }
+  itemListSection.innerHTML = '';
+  itemListSorted.forEach((item) => {
+    itemListSection.appendChild(item);
+  });
+}
+orderOptions.addEventListener('change', orderByPrice);
+
+const initialRenderization = async () => {
+  await addProductItem('computador');
+  addProductToCart();
   cartItemsList.innerHTML = getSavedCartItems();
   const cartItem = document.querySelectorAll('.cart__item');
   cartItem.forEach((item) => item.addEventListener('click', cartItemClickListener));
@@ -121,6 +155,7 @@ const emptyCart = () => {
   calculateTotalPrice();
   countCartItems();
 };
+
 const btnEmptyCart = document.querySelector('.empty-cart');
 btnEmptyCart.addEventListener('click', emptyCart);
 
