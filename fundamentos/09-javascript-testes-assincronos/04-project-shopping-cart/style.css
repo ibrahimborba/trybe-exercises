@@ -257,3 +257,105 @@ body {
 .footer-text {
   margin-top: 15px;
 }
+
+/* Responsive Tablet */
+@media screen and (max-width: 1040px) and (min-width: 460px) {
+  /* Header - Desktop */
+  .header {
+    height: 60px;
+  }
+
+  .nav {
+    width: 80%;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  /* Cover - Desktop */
+  .cover-text {
+    margin-left: 10%;
+    font-size: 50px;
+  }
+
+  /* Products list - Tablet */
+  .items {
+    flex-basis: 90%;
+  }
+
+  .error-message {
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 2;
+  }
+
+  /* Forms - Tablet */
+  .forms-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .forms {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Responsive Desktop */
+@media screen and (min-width: 1200px) {
+  /* Header - Desktop */
+  .header {
+    height: 60px;
+  }
+
+  .nav {
+    width: 85%;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  /* Cover - Desktop */
+  .cover-container {
+    background-position: center;
+    min-height: 40vh;
+  }
+
+  .cover-text {
+    margin-left: 7.5%;
+    font-size: 50px;
+  }
+
+  /* Products list - Desktop */
+  .items {
+    height: 78vh;
+  }
+
+  .error-message {
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 2;
+  }
+
+  /* Forms - Desktop*/
+  .forms-container {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .forms {
+    width:90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .order-options {
+    width: 10%;
+  }
+}
