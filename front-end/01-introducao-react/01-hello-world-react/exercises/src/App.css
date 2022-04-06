@@ -1,0 +1,23 @@
+.Component {
+  background-color: #282c34;
+  text-align: center;
+  color: white;
+}
+
+.header {
+  background-color: #282c34;
+  color: white;
+}
+
+.content-list {
+  list-style: none;
+}
+
+.footer {
+  background-color: lightgrey;
+}
+
+.footer h1 {
+  font-size: 18px;
+  font-weight: 400;
+}
