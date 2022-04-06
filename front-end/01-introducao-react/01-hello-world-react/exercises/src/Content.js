@@ -25,7 +25,7 @@ const conteudos = [
 class Content extends Component {
   render () {
     return conteudos.map((subject) => {
-      return <ul key={ subject.bloco }>
+      return <ul className ='content-list' key={ subject.bloco }>
         <li>O conteúdo é: {subject.conteudo}</li>
         <li>Status: {subject.status}</li>
         <li>Bloco: {subject.bloco}</li>
