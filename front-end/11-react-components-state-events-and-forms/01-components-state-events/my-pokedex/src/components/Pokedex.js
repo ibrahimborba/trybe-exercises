@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Pokemon from "./Pokemon";
 import FilterButton from "./FilterButton";
 import pokemons from '../data';
-import './Pokedex.css';
+import styles from './Pokedex.module.css';
 
 class Pokedex extends Component {
   constructor() {
@@ -60,7 +60,7 @@ class Pokedex extends Component {
 
     return (
       <section>
-        <ul className="pokemon-list">
+        <ul className={styles.pokemonList}>
           <Pokemon key = {pokemonFilter[this.state.pokemonIndex].id} pokemon = { pokemonFilter[this.state.pokemonIndex] } />
         </ul>
         <section>
