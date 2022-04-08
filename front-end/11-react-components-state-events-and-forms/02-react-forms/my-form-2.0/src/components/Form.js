@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import styles from './Form.module.css';
 
 class Form extends Component {
   render () {
     return (
       <form>
-        <fieldset>
+        <fieldset className={styles.fieldset}>
           <label>
             Nome
             <input
@@ -54,6 +55,21 @@ class Form extends Component {
               name='living' type='radio' value='Apartamento'
               required />
           </label>         
+        </fieldset>
+
+        <fieldset className={styles.fieldset}>
+          <label>
+            Resumo do currículo
+            <textarea name='curriculum' maxLength='1000' required />
+          </label>
+          <label>
+            Cargo
+            <textarea name='jobTitle' maxLength='40' required />
+          </label>
+          <label>
+            Descrição do cargo
+            <textarea name='description' maxLength='500' required />
+          </label>
         </fieldset>
       </form>
     );
