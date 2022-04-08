@@ -3,14 +3,14 @@ import Pokedex from './components/Pokedex';
 
 function App() {
   return (
-    <body className="App">
+    <main className="App">
       <header className="header">
         <h1>Pokedex</h1>
       </header>
       <section>
-        <Pokedex />;
+        <Pokedex />
       </section>
-    </body>
+    </main>
   );
 }
 
