@@ -2,6 +2,32 @@ import React, { Component } from 'react';
 import styles from './Form.module.css';
 
 class Form extends Component {
+  constructor() {
+    super();
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      nameInput: '',
+      email: '',
+      cpf: '',
+      address: '',
+      city: '',
+      stateInput: '',
+      liveIn: false,
+      curriculum: '',
+      jobTitle: '',
+      description: '',
+    };
+
+    handleChange({ target }) {
+      const { name } = target;
+      const value = target.type === 'checkbox' ? target.checked : target.value;
+    
+      this.setState({
+        [name]: value,
+      });
+    }
+  }
+
   render () {
     return (
       <form>
@@ -9,7 +35,9 @@ class Form extends Component {
           <label>
             Nome
             <input
-              name='nome' type='text' maxLength='40'
+              name='nameInput' type='text' maxLength='40'
+              value={this.state.nameInput}
+              onChange={this.handleChange}
               style={{textTransform: 'uppercase'}}
               required />
           </label>
@@ -39,20 +67,20 @@ class Form extends Component {
           </label>
           <label>
             Estado
-            <select name="state" id="state" required>
+            <select name="stateInput" id="state" required>
               <option value="uf">UF</option>
             </select>
           </label>
           <label>
             Casa
             <input
-              name='living' type='radio' value='Casa'
+              name='liveIn' type='radio' value='Casa'
               required />
           </label>
           <label>
           Apartamento
             <input
-              name='living' type='radio' value='Apartamento'
+              name='liveIn' type='radio' value='Apartamento'
               required />
           </label>         
         </fieldset>
