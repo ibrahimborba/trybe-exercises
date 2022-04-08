@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class NameInput extends Component {
+class Input extends Component {
   render() {
     const { value, handleChange } = this.props;
     let error = undefined;
@@ -22,4 +22,4 @@ class NameInput extends Component {
   }
 }
 
-export default NameInput;
+export default Input;

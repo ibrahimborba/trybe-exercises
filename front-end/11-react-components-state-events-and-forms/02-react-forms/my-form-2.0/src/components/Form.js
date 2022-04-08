@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Form.module.css';
-import NameInput from './NameInput';
+import Input from './Input';
 
 class Form extends Component {
   constructor() {
@@ -34,7 +34,7 @@ class Form extends Component {
     return (
       <form>
         <fieldset className={styles.fieldset}>
-          <NameInput value={this.state.nameInput} handleChange={this.handleChange}/>
+          <Input value={this.state.nameInput} handleChange={this.handleChange}/>
           <label>
             Email
             <input
@@ -77,17 +77,21 @@ class Form extends Component {
               <option value="uf">UF</option>
             </select>
           </label>
-          <label>
+          <label for='house'>
             Casa
             <input
-              name='house' type='radio' value='Casa'
-              required />
+              name='liveIn' id='hosue' type='radio'
+              value={this.state.liveIn}
+              onChange={this.handleChange}
+            />
           </label>
-          <label>
-          Apartamento
+          <label for='apartment'>
+            Apartamento
             <input
-              name='liveIn' type='radio' value='Apartamento'
-              required />
+              name='liveIn' id='apartment' type='radio'
+              value={this.state.stateInput}
+              onChange={this.handleChange}
+            />
           </label>         
         </fieldset>
 
