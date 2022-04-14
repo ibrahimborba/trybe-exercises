@@ -9,13 +9,20 @@ class App extends Component {
     };
   }
 
+  saveImageUrl = (url) => {
+    localStorage.setItem('dogImageUrl', url);
+  }
+
   fetchDogs = () => {
     fetch('https://dog.ceo/api/breeds/image/random')
     .then(response => response.json())
     .then(data => {
-      this.setState({dogImage: data.message});
+      this.setState({dogImage: data.message}, () => {
+        const { dogImage } = this.state;
+        this.saveImageUrl(dogImage);
+        alert(dogImage.match(/breeds\/(\w+-\w+|\w+)/)[1]);
+      });
     })
-    console.log(this.state.dogImage);
   }
 
   componentDidMount() {
@@ -28,8 +35,8 @@ class App extends Component {
     const randomDog = <img src={dogImage} alt='a random dog breed'/>
     return (
       <main className='App'>
-        <section>
-          { !dogImage ? loadingMessage : randomDog}
+        <section className='App'>
+          { !dogImage || dogImage.includes('terrier') ? loadingMessage : randomDog}
         </section>
         <button type='button' onClick={ this.fetchDogs }>New Dog!</button>
       </main>
