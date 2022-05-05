@@ -1,9 +1,9 @@
 it("tests randomNumber", () => {
   // testando se a função foi chamada e qual seu retorno
-  randomNumber = jest.fn().mockReturnValue(10);
+  randomNumber = jest.fn().mockImplementation((a, b) => a / b);
 
-  randomNumber();
+  randomNumber(4, 2);
   expect(randomNumber).toHaveBeenCalled();
   expect(randomNumber).toHaveBeenCalledTimes(1);
-  expect(randomNumber()).toBe(10);
+  expect(randomNumber(4, 2)).toBe(2);
 });
