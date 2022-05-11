@@ -39,7 +39,11 @@
       };
 
       const reducer = (state = ESTADO_INICIAL) => {
-        return state;
+        switch () {
+          default:
+           return state;
+        }
+        
       };
 
       const store = Redux.createStore(reducer);
