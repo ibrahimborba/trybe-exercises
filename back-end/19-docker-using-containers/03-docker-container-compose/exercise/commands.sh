@@ -5,5 +5,5 @@ http://localhost:4545/missao_trybe.html
 #Inspect and check Source in Mount
 docker inspect site-trybe
 
-#Exercise 2 - Up a ghost blog with Docker Compose
+#Exercise 2, 3 and 4 - Up a ghost blog with Docker Compose
 docker-compose up -d --build
