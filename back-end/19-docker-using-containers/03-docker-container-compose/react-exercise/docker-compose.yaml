@@ -1,0 +1,7 @@
+version: "3"
+services:
+  react:
+    build: react-docker/
+    restart: always
+    ports:
+      - 8080:80
