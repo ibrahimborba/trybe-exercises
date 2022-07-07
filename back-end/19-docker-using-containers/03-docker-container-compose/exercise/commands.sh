@@ -4,3 +4,6 @@ docker run -d --name site-trybe -p 4545:80 -v /home/ibrahim/Documents/Trybe/tryb
 http://localhost:4545/missao_trybe.html
 #Inspect and check Source in Mount
 docker inspect site-trybe
+
+#Exercise 2 - Up a ghost blog with Docker Compose
+docker-compose up -d
