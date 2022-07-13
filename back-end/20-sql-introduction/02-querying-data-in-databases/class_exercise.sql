@@ -20,18 +20,24 @@ SELECT *
  WHERE nome <> 'Um livro do Ano'
    AND  nome <> 'Novas conquistas novas responsabilidades';
 
-  SELECT *
-    FROM biblioteca
-ORDER BY ano_lancamento DESC, 
-		 nome ASC;
+-- Opção para o exercício 3
+SELECT *
+  FROM biblioteca
+ LIMIT 2
+OFFSET 2;
+
+SELECT *
+  FROM biblioteca
+ ORDER BY ano_lancamento DESC, 
+	      nome ASC;
           
-  SELECT *
-    FROM biblioteca
-ORDER BY quantidade DESC
-   LIMIT 1;
+SELECT *
+  FROM biblioteca
+ ORDER BY quantidade DESC
+ LIMIT 1;
     
-  SELECT *
-    FROM biblioteca
-ORDER BY vendas DESC
-   LIMIT 4;
+SELECT *
+  FROM biblioteca
+ ORDER BY vendas DESC
+ LIMIT 4;
     
