@@ -18,7 +18,8 @@ SELECT COUNT(*)
 SELECT *
   FROM biblioteca
  WHERE nome <> 'Um livro do Ano'
-   AND  nome <> 'Novas conquistas novas responsabilidades';
+   AND  nome <> 'Novas conquistas novas responsabilidades'
+ LIMIT 2;
 
 -- Opção para o exercício 3
 SELECT *
