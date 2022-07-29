@@ -17,6 +17,30 @@ const drinks = [
 	{ id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
 
+app.get('/recipes/search', function (req, res) {
+	const { name, maxPrice } = req.query;
+	const filteredRecipes = recipes.filter((r) => r.name.includes(name) && r.price < Number(maxPrice));
+  res.status(200).json(filteredRecipes);
+});
+
+app.get('/recipes/:id', function (req, res) {
+  const { id } = req.params;
+  const recipe = recipes.find((r) => r.id === Number(id));
+
+  if (!recipe) return res.status(404).json({ message: 'Recipe not found!'});
+
+  res.status(200).json(recipe);
+});
+
+app.get('/drinks/:id', function (req, res) {
+  const { id } = req.params;
+  const drink = drinks.find((d) => d.id === Number(id));
+
+  if (!drink) return res.status(404).json({ message: 'Drink not found!'});
+
+  res.status(200).json(drink);
+});
+
 app.get('/recipes', function (req, res) {
   res.json(recipes);
 });
