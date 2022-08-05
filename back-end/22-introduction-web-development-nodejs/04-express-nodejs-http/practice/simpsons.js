@@ -21,8 +21,8 @@ simpsons.get('/simpsons/:id', async (req, res) => {
     const simpsonsList = JSON.parse(characters);
     const simpsonFound = simpsonsList.find((simpson) => simpson.id === id);
 
-    if (!simpsonFound) res.status(404).json({ message: 'simpson not found' });
-    res.status(200).json(simpsonFound);
+    if (!simpsonFound) { return res.status(404).json({ message: 'simpson not found' }); }
+    return res.status(200).json(simpsonFound);
   } catch (error) {
     res.status(500).json(error);
   }
