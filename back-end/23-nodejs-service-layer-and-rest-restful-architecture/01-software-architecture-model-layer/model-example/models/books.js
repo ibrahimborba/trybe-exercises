@@ -3,7 +3,7 @@ const connection = require('./connection');
 const serialize = (bookData) => ({
   id: bookData.id,
   title: bookData.title,
-  authorId: bookData.authorId,
+  authorId: bookData.author_id,
 });
 
 const getAll = async () => {
