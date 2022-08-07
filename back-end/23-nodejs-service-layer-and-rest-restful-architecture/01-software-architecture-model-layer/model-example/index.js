@@ -14,4 +14,14 @@ app.get('/books', async (_req, res) => {
   }
 });
 
+app.get('/books/:authorId', async (req, res) => {
+  const { authorId } = req.params;
+  try {
+    const booksByAuthorId = await booksModel.getByAuthorId(authorId);
+    res.status(200).json(booksByAuthorId);
+  } catch (err) {
+    res.status(500).json(err.message)
+  }
+});
+
 app.listen(PORT, () => console.log(`Listening port ${PORT}`));
