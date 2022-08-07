@@ -18,6 +18,9 @@ app.get('/books/:authorId', async (req, res) => {
   const { authorId } = req.params;
   try {
     const booksByAuthorId = await booksModel.getByAuthorId(authorId);
+    if(booksByAuthorId.length < 1) {
+      res.status(404).json({message: 'Not found'});
+    }
     res.status(200).json(booksByAuthorId);
   } catch (err) {
     res.status(500).json(err.message)
