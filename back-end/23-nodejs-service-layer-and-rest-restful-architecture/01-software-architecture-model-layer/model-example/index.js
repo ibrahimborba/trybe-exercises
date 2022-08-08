@@ -8,9 +8,9 @@ const PORT = 3001;
 app.get('/books', async (_req, res) => {
   try {
     const books = await booksModel.getAll();
-    res.status(200).json(books);
+    return res.status(200).json(books);
   } catch (err) {
-    res.status(500).json(err.message)
+    return res.status(500).json(err.message)
   }
 });
 
@@ -19,9 +19,22 @@ app.get('/books/:authorId', async (req, res) => {
   try {
     const booksByAuthorId = await booksModel.getByAuthorId(authorId);
     if(booksByAuthorId.length < 1) {
-      res.status(404).json({message: 'Not found'});
+      return res.status(404).json({message: 'Not found'});
     }
-    res.status(200).json(booksByAuthorId);
+    return res.status(200).json(booksByAuthorId);
+  } catch (err) {
+    return res.status(500).json(err.message)
+  }
+});
+
+app.post('/books', async (req, res) => {
+  const { title, author_id } = req.body;
+  try {
+    if(!booksModel.validateNewBook(title, author_id)) {
+      return res.status(400).json({message: 'Dados inválidos'});
+    }
+    await booksModel.addBook(title, author_id)
+    return res.status(201).json({message: 'Livro criado com sucesso!'});
   } catch (err) {
     res.status(500).json(err.message)
   }

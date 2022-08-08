@@ -16,4 +16,24 @@ const getByAuthorId = async (id) => {
   return books.map(serialize);
 };
 
-module.exports = { getAll, getByAuthorId };
+const validateNewBook = async (title, authorId) => {
+  if (!title || title.length < 3) return false;
+	if (!authorId || (await getByAuthorId(authorId)).length === 0) return false;
+
+	return true;
+
+}
+
+const addBook = async (title, authorId) => {
+  await connection.execute(
+    'INSERT INTO books (title, author_id) VALUES(?, ?);',
+    [title, authorId],
+  );
+}
+
+module.exports = {
+  getAll,
+  getByAuthorId,
+  validateNewBook,
+  addBook,
+};
