@@ -20,4 +20,6 @@ const getAddress = async (cep) => {
   }
 };
 
-module.exports = { getAddress };
+const createAddress = () => cepModel.newAddress();
+
+module.exports = { getAddress, createAddress };

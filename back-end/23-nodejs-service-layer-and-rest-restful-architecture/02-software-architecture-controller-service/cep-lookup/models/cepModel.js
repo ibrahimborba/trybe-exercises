@@ -5,4 +5,6 @@ const getByCEP = async (cep) => {
   return address;
 };
 
-module.exports = { getByCEP };
+const createAddress = (newAddress) => newAddress;
+
+module.exports = { getByCEP, createAddress };
