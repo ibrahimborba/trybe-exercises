@@ -1,4 +1,4 @@
-enum units {
+enum lengthUnits {
   km = 1000,
   hm = 100,
   dam = 10,
@@ -8,10 +8,10 @@ enum units {
   mm = 0.001
 }
 
-function convert(valor: number, baseUnit: string, convertUnit: string): number {
+function convertLength(valor: number, baseUnit: string, convertUnit: string): number {
   // source: https://stackoverflow.com/questions/50417254/dynamically-access-enum-in-typescript-by-key
-  const baseValue = units[baseUnit as keyof typeof units];
-  const convertValue = units[convertUnit as keyof typeof units];
+  const baseValue = lengthUnits[baseUnit as keyof typeof lengthUnits];
+  const convertValue = lengthUnits[convertUnit as keyof typeof lengthUnits];
   const converted = (valor * baseValue) / convertValue;
   return converted;
 };
