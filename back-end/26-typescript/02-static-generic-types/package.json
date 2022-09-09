@@ -12,5 +12,8 @@
   "devDependencies": {
     "@tsconfig/node16": "^1.0.3",
     "@types/node": "^18.7.16"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.2"
   }
 }
