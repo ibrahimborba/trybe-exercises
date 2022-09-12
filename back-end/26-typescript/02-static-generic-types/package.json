@@ -1,0 +1,27 @@
+{
+  "name": "02-static-generic-types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./dist/main.js",
+    "db:reset": "npx -y tsc && npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/node": "^18.7.16",
+    "mysql2": "^2.3.3",
+    "sequelize-cli": "^6.4.1"
+  },
+  "dependencies": {
+    "@types/readline-sync": "^1.4.4",
+    "@types/sequelize": "^4.28.14",
+    "dotenv": "^16.0.2",
+    "readline-sync": "^1.4.10",
+    "sequelize": "^6.21.6"
+  }
+}
