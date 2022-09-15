@@ -1,51 +1,18 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+import Product from './Product';
+import User from './User';
+import Order from './Order';
+
 const { log } = console;
 
-class Student {
-  private registration: string;
+const userJohn = new User('John');
+const coxinha = new Product('Coxinha', 10);
+const cafe = new Product('Café', 5);
 
-  private name: string;
+const productsList: Product[] = [coxinha, cafe];
 
-  private testGrades: [number, number, number, number];
+const orderOne = new Order(userJohn, productsList, 'cartao', 0.1);
 
-  private projectGrades: [number, number];
-
-  constructor(
-    registration: string,
-    name: string,
-    testGrades: [number, number, number, number],
-    projectGrades: [number, number],
-  ) {
-    this.registration = registration;
-    this.name = name;
-    this.testGrades = testGrades;
-    this.projectGrades = projectGrades;
-  }
-
-  get gradesSum(): number {
-    const grades = [...this.testGrades, ...this.projectGrades];
-    const gradesSum = grades.reduce((acc, grade) => acc + grade, 0);
-    return gradesSum;
-  }
-
-  get gradesMean(): number {
-    const grades = [...this.testGrades, ...this.projectGrades];
-    const gradesSum = grades.reduce((acc, grade) => acc + grade, 0);
-    const mean = gradesSum / grades.length;
-    return mean;
-  }
-}
-
-const studentRegistration: string = 'student-registration';
-const studentName: string = 'John Doe';
-const studentTestGrades: [number, number, number, number] = [5, 10, 5, 10];
-const studentProjectGrades: [number, number] = [5, 10];
-
-const studentOne = new Student(
-  studentRegistration,
-  studentName,
-  studentTestGrades,
-  studentProjectGrades,
-);
-
-log(studentOne.gradesSum);
-log(studentOne.gradesMean);
+log(orderOne.total);
+log(orderOne.totalWithDiscount);
