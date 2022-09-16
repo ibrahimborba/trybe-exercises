@@ -29,19 +29,5 @@ describe('Student Tests', () => {
         }).to.throw('should have at least 16 characters');
       });
     });
-    describe('Instancing with a birthDate in the future', () => {
-      it('should throw error FUTURE_BABY', () => {
-        expect(() => {
-          new Student(NAME, new Date(3000, 1, 1), EXAMS_GRADE, WORKS_GRADE);
-        }).to.throw('FUTURE_BABY');
-      });
-    });
-    describe('Instancing with a person older than 120 years', () => {
-      it('should throw error MAX_AGE', () => {
-        expect(() => {
-          new Student(NAME, new Date(1900, 1, 1), EXAMS_GRADE, WORKS_GRADE);
-        }).to.throw('MAX_AGE');
-      });
-    });
   });
 });
