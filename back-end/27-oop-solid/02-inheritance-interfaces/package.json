@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --require ts-node/register --extensions ts --watch --watch-files src 'src/tests/**/*.ts'",
     "start": "npm run build && node ./build/index.js",
-    "dev": "tsnd ./src/index.ts",
+    "dev": "ts-node ./src/index.ts",
     "build": "npx tsc -t es5 ./src/index.ts"
   },
   "devDependencies": {
