@@ -1,13 +1,10 @@
 export default class Person {
-  public _name: string;
-  private _birthDate: Date;
-
-  constructor(name: string, birthDate: Date) {
+  constructor(public name: string, private _birthDate: Date) {
     this.validateName(name);
-    this.validateBirthDate(birthDate);
+    this.validateBirthDate(_birthDate);
 
-    this._name = name;
-    this._birthDate = birthDate;
+    this.name = name;
+    this._birthDate = _birthDate;
   }
 
   private validateName(name: string) {

@@ -7,7 +7,7 @@ describe('Person Tests', () => {
   describe('New Person instantiation', () => {
     const person = new Person(NAME, BIRTH_DATE);
     it('checks its properties', () => {
-      expect(person).to.haveOwnProperty('_name');
+      expect(person).to.haveOwnProperty('name');
       expect(person).to.haveOwnProperty('_birthDate');
     });
   });
