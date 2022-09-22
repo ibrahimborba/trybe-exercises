@@ -1,4 +1,4 @@
-export default abstract class Character {
+export default abstract class Character implements ICharacter {
   constructor(public name: string) { }
   abstract talk(): void;
   abstract specialMove(): void; 
@@ -6,7 +6,7 @@ export default abstract class Character {
 
 export interface ICharacter {
   name: string;
-  specialMove: string;
+  specialMove(): void;
 }
 
 export interface IDbCharacter extends Character {
