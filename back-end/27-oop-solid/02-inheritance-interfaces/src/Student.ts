@@ -1,19 +1,26 @@
+import Enrollable from './Enrollable';
 import Person from './Person';
 
-export default class Student extends Person {
+export default class Student extends Person implements Enrollable {
   // eslint-disable-next-line max-params
   private _enrollment: string;
 
   constructor(
     name: string,
-    _birthDate: Date,
+    birthDate: Date,
     private _examsGrades: [number, number, number, number],
     private _worksGrades: [number, number],
   ) {
-    super(name, _birthDate);
-    this._enrollment = this.generateEnrollment(name, _birthDate);
+    super(name, birthDate);
+    this._enrollment = this.generateEnrollment();
     this._examsGrades = _examsGrades;
     this._worksGrades = _worksGrades;
+  }
+
+  get enrollment() { return this._enrollment; }
+
+  set enrollment(value: string) {
+    this._enrollment = value;
   }
 
   private validateEnrollment(enrollment: string) {
@@ -23,11 +30,11 @@ export default class Student extends Person {
     }
   }
   
-  private generateEnrollment(name: string, birthDate: Date): string {
-    const day = String(birthDate.getDate()).padStart(2, '0');
-    const month = String(birthDate.getMonth() + 1).padStart(2, '0');
-    const year = birthDate.getFullYear();
-    const enrollment = `${name}-${day}/${month}/${year}`;
+  generateEnrollment(): string {
+    const day = String(this.birthDate.getDate()).padStart(2, '0');
+    const month = String(this.birthDate.getMonth() + 1).padStart(2, '0');
+    const year = this.birthDate.getFullYear();
+    const enrollment = `${this.name}-${day}/${month}/${year}`;
 
     this.validateEnrollment(enrollment);
     return enrollment;

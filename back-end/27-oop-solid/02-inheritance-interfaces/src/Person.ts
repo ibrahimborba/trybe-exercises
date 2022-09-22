@@ -1,10 +1,9 @@
-export default class Person {
-  constructor(public name: string, private _birthDate: Date) {
+export default abstract class Person {
+  constructor(protected name: string, protected birthDate: Date) {
     this.validateName(name);
-    this.validateBirthDate(_birthDate);
-
+    this.validateBirthDate(birthDate);
     this.name = name;
-    this._birthDate = _birthDate;
+    this.birthDate = birthDate;
   }
 
   private validateName(name: string) {
@@ -21,9 +20,9 @@ export default class Person {
   }
 
   public getBirthDate(): string {
-    const day = String(this._birthDate.getDate()).padStart(2, '0');
-    const month = String(this._birthDate.getMonth() + 1).padStart(2, '0'); // January is 0!
-    const year = this._birthDate.getFullYear();
+    const day = String(this.birthDate.getDate()).padStart(2, '0');
+    const month = String(this.birthDate.getMonth() + 1).padStart(2, '0'); // January is 0!
+    const year = this.birthDate.getFullYear();
     return `${day}-${month}-${year}`;
   }
 }
