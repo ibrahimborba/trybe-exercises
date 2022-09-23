@@ -1,43 +1,54 @@
-import Enrollable from './Enrollable';
 import Person from './Person';
 
-export default class Student extends Person implements Enrollable {
-  // eslint-disable-next-line max-params
+export default class Student extends Person {
   private _enrollment: string;
+  private _examsGrades: number[];
+  private _worksGrades: number[];
 
   constructor(
     name: string,
     birthDate: Date,
-    private _examsGrades: [number, number, number, number],
-    private _worksGrades: [number, number],
+    examsGrades: number[],
+    worksGrades: number[],
   ) {
     super(name, birthDate);
-    this._enrollment = this.generateEnrollment();
-    this._examsGrades = _examsGrades;
-    this._worksGrades = _worksGrades;
+    Student.validateExamsGrades(examsGrades);
+    Student.validateWorksGrades(worksGrades);
+    this._enrollment = Student.generateEnrollment();
+    this._examsGrades = examsGrades;
+    this._worksGrades = worksGrades;
   }
 
-  get enrollment() { return this._enrollment; }
-
+  get enrollment(): string { return this._enrollment; }
   set enrollment(value: string) {
+    if (value.length < 16) throw new Error('INVALID_ENROLLMENT');
     this._enrollment = value;
   }
 
-  private validateEnrollment(enrollment: string) {
-    const MIN_LENGTH = 16;
-    if (enrollment.length < MIN_LENGTH) {
-      throw new Error(`should have at least ${MIN_LENGTH} characters`); 
-    }
+  get examsGrades(): number[] { return this._examsGrades; }
+  set examsGrades(value: number[]) {
+    Student.validateExamsGrades(value);
+    this._examsGrades = value;
   }
-  
-  generateEnrollment(): string {
-    const day = String(this.birthDate.getDate()).padStart(2, '0');
-    const month = String(this.birthDate.getMonth() + 1).padStart(2, '0');
-    const year = this.birthDate.getFullYear();
-    const enrollment = `${this.name}-${day}/${month}/${year}`;
 
-    this.validateEnrollment(enrollment);
-    return enrollment;
+  get worksGrades(): number[] { return this._worksGrades; }
+  set worksGrades(value: number[]) {
+    Student.validateWorksGrades(value);
+    this._worksGrades = value;
+  }
+
+  private static validateExamsGrades(value: number[]): void {
+    if (value.length > 4) throw new Error('TOO_MANY_GRADES');
+  }
+
+  private static validateWorksGrades(value: number[]): void {
+    if (value.length > 2) throw new Error('TOO_MANY_GRADES');
+  }
+
+  private static generateEnrollment(): string {
+    const randomStr = String(Date.now() * (Math.random() + 1))
+      .replace(/\W/g, '');
+    return `STU${randomStr}`;
   }
 
   public sumGrades(): number {

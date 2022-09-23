@@ -1,13 +1,18 @@
 export default class Subject {
-  constructor(public name: string) {
-    this.validateName(name);
-    this.name = name;
+  private _name: string;
+
+  constructor(name: string) {
+    Subject.validateName(name);
+    this._name = name; 
   }
 
-  private validateName(name: string) {
-    const MIN_LENGTH = 3;
-    if (name.length < MIN_LENGTH) {
-      throw new Error(`should have at least ${MIN_LENGTH} characters`); 
-    }
+  get name(): string { return this._name; }
+  set name(value: string) {
+    Subject.validateName(value);
+    this._name = value;
+  }
+
+  private static validateName(value: string): void {
+    if (value.length < 3) throw new Error('INVALID_NAME');
   }
 }

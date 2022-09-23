@@ -10,12 +10,10 @@ describe('Teacher Tests', () => {
   describe('New Teacher instantiation', () => {
     const teacher = new Teacher(NAME, BIRTH_DATE, SALARY, SUBJECT);
     it('checks its properties', () => {
-      expect(teacher).to.haveOwnProperty('name');
+      expect(teacher).to.haveOwnProperty('_name');
       expect(teacher).to.haveOwnProperty('_birthDate');
-      expect(teacher).to.haveOwnProperty('registration');
-      expect(teacher).to.haveOwnProperty('salary');
-      expect(teacher).to.haveOwnProperty('admissionDate');
-      expect(teacher).to.haveOwnProperty('subject');
+      expect(teacher).to.haveOwnProperty('_subject');
+      expect(teacher).to.haveOwnProperty('_salary');
     });
   });
 });

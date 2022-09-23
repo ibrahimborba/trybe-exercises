@@ -9,7 +9,7 @@ describe('Student Tests', () => {
   describe('New Student instantiation', () => {
     const student = new Student(NAME, BIRTH_DATE, EXAMS_GRADE, WORKS_GRADE);
     it('checks its properties', () => {
-      expect(student).to.haveOwnProperty('name');
+      expect(student).to.haveOwnProperty('_name');
       expect(student).to.haveOwnProperty('_birthDate');
       expect(student).to.haveOwnProperty('_enrollment');
       expect(student).to.haveOwnProperty('_examsGrades');
@@ -23,10 +23,10 @@ describe('Student Tests', () => {
 
   describe('Validations', () => {
     describe('Instancing with a enrollment with less than 3 chars', () => {
-      it('should throw error MIN_LENGTH', () => {
+      it('should throw error INVALID_NAME_MIN_LENGTH', () => {
         expect(() => {
-          new Student('Jon', BIRTH_DATE, EXAMS_GRADE, WORKS_GRADE);
-        }).to.throw('should have at least 16 characters');
+          new Student('Jo', BIRTH_DATE, EXAMS_GRADE, WORKS_GRADE);
+        }).to.throw('INVALID_NAME_MIN_LENGTH');
       });
     });
   });
