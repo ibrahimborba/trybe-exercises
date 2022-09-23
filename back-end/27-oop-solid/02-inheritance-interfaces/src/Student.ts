@@ -1,6 +1,7 @@
+import IEnrollable from './interfaces/IEnrollable';
 import Person from './Person';
 
-export default class Student extends Person {
+export default class Student extends Person implements IEnrollable {
   private _enrollment: string;
   private _examsGrades: number[];
   private _worksGrades: number[];
@@ -14,7 +15,7 @@ export default class Student extends Person {
     super(name, birthDate);
     Student.validateExamsGrades(examsGrades);
     Student.validateWorksGrades(worksGrades);
-    this._enrollment = Student.generateEnrollment();
+    this._enrollment = this.generateEnrollment();
     this._examsGrades = examsGrades;
     this._worksGrades = worksGrades;
   }
@@ -45,7 +46,7 @@ export default class Student extends Person {
     if (value.length > 2) throw new Error('TOO_MANY_GRADES');
   }
 
-  private static generateEnrollment(): string {
+  public generateEnrollment(): string {
     const randomStr = String(Date.now() * (Math.random() + 1))
       .replace(/\W/g, '');
     return `STU${randomStr}`;
