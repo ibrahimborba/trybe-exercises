@@ -1,0 +1,36 @@
+use("aula_29_2");
+
+// db.filmes.find({ ano: { $lte: 2000 } });
+// db.filmes.find({ ano: { $gt: 1993 } });
+// db.filmes.find({ ano: { $gt: 1993, $lte: 2000 } });
+// db.filmes.find({ ano: { $eq: 1993}});
+// db.filmes.find({'avaliacao.bom': 7});
+// db.filmes.find({'avaliacao.ruim': {$ne: 8}});
+// db.filmes.find({ ano: {$in: [ 2001, 1968, 1995 ]} });
+/* db.filmes.find({
+  $and: [
+    { ano: { $gt: 2000 } },
+    { 'avaliacao.bom': { $gte: 8 } }
+  ]
+}); */
+/* db.filmes.find({
+  $or: [
+    { ano: { $gt: 2000 } },
+    { 'avaliacao.bom': { $gte: 8 } }
+  ]
+}); */
+
+// db.filmes.find({ diretor: {$ne: 'Michael Bay'}});
+// db.filmes.find({ diretor: {$ne: 'Michael Bay'}});
+
+/* db.filmes.find({
+  diretor: {$ne: 'Michael Bay'},
+  'avaliacao.ruim': {$ne: 10}
+}); */
+
+/* db.filmes.find({
+  $nor: [
+    {diretor: 'Michael Bay'},
+    {'avaliacao.ruim': 10}
+  ]
+}); */
