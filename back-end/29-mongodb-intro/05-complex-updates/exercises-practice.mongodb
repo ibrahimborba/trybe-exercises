@@ -161,7 +161,7 @@ db.movies.updateOne(
   }
 ) */
 
-db.movies.updateOne(
+/* db.movies.updateOne(
   { title: 'Batman', "cast.character": "Batman" },
   {
     $push: {
@@ -175,7 +175,7 @@ db.movies.updateOne(
       }
     }
   }
-)
+) */
 
 
 /* db.movies.updateOne(
@@ -186,5 +186,13 @@ db.movies.updateOne(
   }
 );  */
 
+db.movies.updateMany(
+  { title: {$in: ['Batman', 'Home Alone']} },
+  {
+    $unset: {
+      "cast.$[].character": ""
+    }
+  }
+)
 
 db.movies.find();
